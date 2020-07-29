@@ -1,0 +1,29 @@
+:root {
+    --progress: 100%;
+}
+
+.calculator {
+    background: lightblue;
+}
+
+
+/*******/
+
+.bar {
+
+    width: 100%;
+    height: 10px;
+
+    background: orange;
+
+}
+
+.progress {
+
+    /* width: 1%; */
+    width: var(--progress);
+    height: 100%;
+
+    background: gray;
+
+}
