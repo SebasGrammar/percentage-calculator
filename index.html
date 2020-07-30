@@ -10,7 +10,7 @@
 
 <body>
 
-    <div class="calculator">
+    <div class="calculator" id="calculator-1">
         <h2 class="header">Calculadora</h2>
 
 
@@ -22,13 +22,32 @@
 
         <div class="bar">
 
-            <div class="progress" data-sizing="%" data-name="progress">
+            <div class="progress" id="progress-1" data-sizing="%" data-name="progress-1">
 
             </div>
         </div>
 
     </div>
 
+
+    <div class="calculator" id="calculator-2">
+        <h2 class="header">Calculadora</h2>
+
+
+        <p class="calculation">
+            Si el <input type="text" class="percent">% es <input type="text" class="amount">, entonces el total es <span class="base">-</span>
+        </p>
+        <button type="submit">Calcular</button>
+
+
+        <div class="bar">
+
+            <div class="progress" id="progress-2" data-sizing="%" data-name="progress-2">
+
+            </div>
+        </div>
+
+    </div>
 
     <script type="module" src="main.js"></script>
 </body>

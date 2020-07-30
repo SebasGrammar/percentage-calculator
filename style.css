@@ -1,9 +1,12 @@
 :root {
-    --progress: 100%;
+    /* --progress: 0%; */
+
+    --progress-1: 0%;
+    --progress-2: 0%;
 }
 
 body {
-    background: gray;
+    background: ;
 }
 
 .calculator {
@@ -25,9 +28,19 @@ body {
 .progress {
 
     /* width: 1%; */
-    width: var(--progress);
+    /* width: var(--progress); */
     height: 100%;
 
     background: gray;
 
+    transition: width 2s;
+
+}
+
+#progress-1 {
+    width: var(--progress-1)
+}
+
+#progress-2 {
+    width: var(--progress-2)
 }
