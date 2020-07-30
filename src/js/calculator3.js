@@ -1,0 +1,26 @@
+const calculator = document.querySelector("#calculator-3");
+
+const amount = calculator.querySelector(".amount"),
+    percent = calculator.querySelector(".percent"),
+    base = calculator.querySelector(".base");
+
+const bar = calculator.querySelector(".bar");
+const progress = bar.querySelector(".progress");
+
+function update() {
+    // const total = 100 - (100 - percent.value)
+
+    // document.documentElement.style.setProperty(`--${this.dataset.name}`, `${total}%`);
+    console.log(this.dataset.name)
+
+    percent.textContent = Number(amount.value) * 100 / Number(base.value)
+
+    const total = 100 - (100 - percent.textContent)
+
+    document.documentElement.style.setProperty(`--${this.dataset.name}`, `${total}%`);
+    console.log("L")
+}
+
+export function main() {
+    amount.addEventListener("input", update.bind(progress))
+}
