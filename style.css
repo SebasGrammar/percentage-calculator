@@ -2,6 +2,10 @@
     --progress: 100%;
 }
 
+body {
+    background: gray;
+}
+
 .calculator {
     background: lightblue;
 }
