@@ -4,6 +4,7 @@
     --progress-1: 0%;
     --progress-2: 0%;
     --progress-3: 0%;
+    --progress-4: 0%;
 }
 
 body {
@@ -48,4 +49,8 @@ body {
 
 #progress-3 {
     width: var(--progress-3)
+}
+
+#progress-4 {
+    width: var(--progress-4)
 }

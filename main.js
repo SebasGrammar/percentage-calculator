@@ -4,6 +4,16 @@ import {main as m} from "./src/js/calculator2.js";
 
 import {main as ma} from "./src/js/calculator3.js";
 
+import {main as mai} from "./src/js/calculator4.js";
+
+import {main as mm} from "./src/js/price1.js";
+
+import {main as mmm} from "./src/js/price2.js";
+
+import {main as mmmm} from "./src/js/price3.js";
+
+console.log(mai)
+
 // const calculator1 = document.querySelector("#calculator-1");
 
 // const amount = calculator1.querySelector(".amount"),
@@ -41,5 +51,12 @@ function updateTwo() {
 main()
 m()
 ma()
+mai()
+
+// prices
+
+mm()
+mmm()
+mmmm()
 
 console.log(main)
