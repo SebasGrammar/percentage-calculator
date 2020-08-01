@@ -7,6 +7,8 @@ const startingPrice = calculator.querySelector(".starting-price"),
 const bar = calculator.querySelector(".bar");
 const progress = bar.querySelector(".progress");
 
+const submitButton = calculator.querySelector("button");
+
 function update() {
 
     console.log(this.dataset.name)
@@ -19,6 +21,10 @@ function update() {
     console.log("L")
 }
 
+// export function main() {
+//     startingPrice.addEventListener("input", update.bind(progress))
+// }
+
 export function main() {
-    startingPrice.addEventListener("input", update.bind(progress))
+    submitButton.addEventListener("click", update.bind(progress))
 }

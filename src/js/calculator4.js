@@ -9,6 +9,8 @@ const amount2 = calculator.querySelector(".amount-2"),
 const bar = calculator.querySelector(".bar");
 const progress = bar.querySelector(".progress");
 
+const submitButton = calculator.querySelector("button");
+
 function update() {
 
     amount2.textContent = Number(amount1.value) * Number(percent2.value) / Number(percent1.value)
@@ -21,6 +23,10 @@ function update() {
     console.log("L")
 }
 
+// export function main() {
+//     percent2.addEventListener("input", update.bind(progress))
+// }
+
 export function main() {
-    percent2.addEventListener("input", update.bind(progress))
+    submitButton.addEventListener("click", update.bind(progress))
 }

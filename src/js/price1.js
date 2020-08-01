@@ -7,18 +7,27 @@ const startingPrice = calculator.querySelector(".starting-price"),
 const bar = calculator.querySelector(".bar");
 const progress = bar.querySelector(".progress");
 
+const submitButton = calculator.querySelector("button");
+
 function update() {
 
     console.log(this.dataset.name)
 
     salePrice.textContent = Number(startingPrice.value) * (100 - Number(discount.value)) / 100
 
-    //const total = 100 - (100 - percent.textContent)
+    const total = 100 - discount.value
 
-    //document.documentElement.style.setProperty(`--${this.dataset.name}`, `${total}%`);
-    console.log("L")
+    console.log(total)
+
+    document.documentElement.style.setProperty(`--${this.dataset.name}`, `${total}%`);
+    //document.documentElement.style.setProperty(`--progress-5`, `${total}%`);
+
 }
 
+// export function main() {
+//     startingPrice.addEventListener("input", update.bind(progress))
+// }
+
 export function main() {
-    startingPrice.addEventListener("input", update.bind(progress))
+    submitButton.addEventListener("click", update.bind(progress))
 }

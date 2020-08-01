@@ -1,42 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
 :root {
     /* --progress: 0%; */
-
     --progress-1: 0%;
     --progress-2: 0%;
     --progress-3: 0%;
     --progress-4: 0%;
+    --progress-5: 0%;
+    --progress-6: 0%;
+    --progress-7: 0%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
     background: ;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.container {
+    padding: 5px 40px;
+}
+
+.calculators {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: repeat(5, 300px); */
+    grid-auto-rows: 300px;
 }
 
 .calculator {
-    background: lightblue;
+    position: relative;
+    background: ;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    border: 1px solid black;
 }
 
+.header {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; */
+    color: #FFF;
+    background: rgb(49, 153, 233);
+    background: linear-gradient(0deg, rgba(49, 153, 233, 1) 0%, rgba(128, 182, 239, 1) 100%);
+    color: ;
+    border-radius: 5px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    padding: 0 15px;
+}
+
+input {
+    /* TOO MUCH REPETITION HERE*/
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1.3rem;
+    text-align: center;
+    border: none;
+    background: inherit;
+    border-bottom: 2px solid #000;
+    width: 50px;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* BUTTON */
+
+button {
+    padding: .8rem 1.2rem;
+    color: #F96167;
+    font-weight: 500;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0 0 0 5px #FFF;
+    margin-right: 1em;
+}
+
+button {
+    background: #FCEE77;
+    /* border: 1px solid red; */
+    border: none;
+    border-radius: 3px;
+}
+
+button:hover {
+    text-decoration: underline;
+    background: #f7efa9;
+    box-shadow: inset 0 0 0 8px #FFF;
+}
+
+button:active {
+    background: var(--button-active);
+}
+
+button:visited {
+    background: var(--button-visited);
+}
 
 /*******/
 
 .bar {
-
     width: 100%;
-    height: 10px;
-
-    background: orange;
-
+    height: 20px;
+    margin-top: 50px;
+    background: rgb(49, 153, 233);
+    background: linear-gradient(0deg, rgba(49, 153, 233, 1) 0%, rgba(128, 182, 239, 1) 100%);
 }
 
 .progress {
-
+    position: relative;
     /* width: 1%; */
     /* width: var(--progress); */
+    display: flex;
+    align-items: center;
     height: 100%;
-
-    background: gray;
-
+    background: #0051B6;
     transition: width 2s;
+}
 
+.limit {
+    position: absolute;
+    right: -1px;
+    display: flex;
+    justify-content: center;
+    width: 1px;
+    height: 100%;
+    background: blue;
+}
+
+.limit:before {
+    content: "2";
+    position: absolute;
+    top: -20px;
+    background: ;
+    font-size: 15px;
 }
 
 #progress-1 {
@@ -53,4 +163,16 @@ body {
 
 #progress-4 {
     width: var(--progress-4)
+}
+
+#progress-5 {
+    width: var(--progress-5)
+}
+
+#progress-6 {
+    width: var(--progress-6)
+}
+
+#progress-7 {
+    width: var(--progress-7)
 }

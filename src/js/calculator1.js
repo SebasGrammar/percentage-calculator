@@ -7,6 +7,8 @@ const amount = calculator1.querySelector(".amount"),
 const bar = calculator1.querySelector(".bar");
 const progress = bar.querySelector(".progress");
 
+const submitButton = calculator1.querySelector("button");
+
 function updateVariable() {
 
     const total = 100 - (100 - percent.value)
@@ -19,6 +21,10 @@ function updateVariable() {
 
 // percent.addEventListener("input", updateVariable.bind(progress))
 
+// export function main() {
+//     percent.addEventListener("input", updateVariable.bind(progress))
+// }
+
 export function main() {
-    percent.addEventListener("input", updateVariable.bind(progress))
+    submitButton.addEventListener("click", updateVariable.bind(progress))
 }
