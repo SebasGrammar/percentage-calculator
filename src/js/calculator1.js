@@ -9,6 +9,8 @@ const progress = bar.querySelector(".progress");
 
 const percentValue = bar.querySelector(".percent-value");
 
+const end = bar.querySelector(".end")
+
 console.log(percentValue)
 
 const endingPoint = bar.querySelector(".ending-point");
@@ -27,8 +29,11 @@ function updateVariable() {
     // endingPoint.style.left = `${total}%`
     percentValue.textContent = `${percent.value}%`
 
-    endingPoint.textContent = amount.textContent
+    
     endingPoint.style.left = `${total}%`
+
+    endingPoint.textContent = amount.textContent
+    end.textContent = base.value
 }
 
 // percent.addEventListener("input", updateVariable.bind(progress))

@@ -9,6 +9,10 @@ const sign = calculator.querySelector(".sign");
 const bar = calculator.querySelector(".bar");
 const progress = bar.querySelector(".progress");
 
+const end = bar.querySelector(".end")
+
+const percentValue = bar.querySelector(".percent-value");
+
 const endingPoint = bar.querySelector(".ending-point");
 
 const submitButton = calculator.querySelector("button");

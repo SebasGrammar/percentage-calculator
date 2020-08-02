@@ -157,7 +157,7 @@ button:visited {
     background: #1460F2
 }
 
-.starting-point, .ending-point {
+.starting-point, .ending-point, .end {
     position: absolute;
 
     display: flex;
@@ -180,6 +180,12 @@ button:visited {
 
     background: var(--color-code-amount);
     transition: left 2s;
+}
+
+.end {
+    right: 0;
+
+    background: green;
 }
 
 .progress {
