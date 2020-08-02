@@ -7,6 +7,8 @@ const amount = calculator.querySelector(".amount"),
 const bar = calculator.querySelector(".bar");
 const progress = bar.querySelector(".progress");
 
+const endingPoint = bar.querySelector(".ending-point");
+
 const submitButton = calculator.querySelector("button");
 
 function update() {
@@ -21,6 +23,7 @@ function update() {
 
     document.documentElement.style.setProperty(`--${this.dataset.name}`, `${total}%`);
     console.log("L")
+    endingPoint.style.left = `${total}%`
 }
 
 // export function main() {

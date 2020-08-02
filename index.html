@@ -10,31 +10,44 @@
 
 <body>
 
+    <div class="container">
+        <h2>Examples</h2>
+
+        <!-- <p>In his final examination, Sebastian got 36 answers right, which is equivalent to
+            63% of the total amount of questions. How many questions are there in total?
+        </p> -->
+
+        <div class="color-code" id="percentage"></div>
+        <div class="color-code" id="amount"></div>
+
+    </div>
 
 
     <div class="container">
+
         <h2>Porcentajes</h2>
-
-
 
         <div class="calculators">
             <div class="calculator" id="calculator-1">
-                <h2 class="header">calculator</h2>
+                <!-- <h2 class="header">calculator</h2> -->
 
-                
                 <div class="content">
                     <p class="calculation">
                         <input type="text" class="percent">% de <input type="text" class="base"> is <span
-                            class="amount">-</span>
+                            class="amount">-</span>.
                     </p>
                     <button type="submit">Calcular</button>
-    
-    
+
+
                     <div class="bar">
-    
+
                         <div class="progress" id="progress-1" data-sizing="%" data-name="progress-1">
+                            <span class="percent-value"></span>
                             <div class="limit"></div>
                         </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
                     </div>
                 </div>
 
@@ -42,22 +55,25 @@
 
 
             <div class="calculator" id="calculator-2">
-                <h2 class="header">calculator</h2>
+                <!-- <h2 class="header">calculator</h2> -->
 
 
                 <div class="content">
                     <p class="calculation">
                         Si <input type="text" class="percent">% es <input type="text" class="amount">, then the total
-                        amount is <span class="base">-</span>
+                        amount is <span class="base">-</span>.
                     </p>
                     <button type="submit">Calcular</button>
-    
-    
+
+
                     <div class="bar">
-    
+
                         <div class="progress" id="progress-2" data-sizing="%" data-name="progress-2">
                             <div class="limit"></div>
                         </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
                     </div>
                 </div>
 
@@ -65,7 +81,7 @@
 
 
             <div class="calculator" id="calculator-3">
-                <h2 class="header">calculator</h2>
+                <!-- <h2 class="header">calculator</h2> -->
 
 
                 <div class="content">
@@ -74,20 +90,23 @@
                             type="text" class="percent">-</span>%.
                     </p>
                     <button type="submit">Calcular</button>
-    
-    
+
+
                     <div class="bar">
-    
+
                         <div class="progress" id="progress-3" data-sizing="%" data-name="progress-3">
                             <div class="limit"></div>
                         </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
                     </div>
                 </div>
 
             </div>
 
             <div class="calculator" id="calculator-4">
-                <h2 class="header">calculator</h2>
+                <!-- <h2 class="header">calculator</h2> -->
 
 
                 <div class="content">
@@ -96,14 +115,19 @@
                         <input type="text" class="percent-2">% is <span class="amount-2">-</span>.
                     </p>
                     <button type="submit">Calcular</button>
-    
-    
+
+
                     <div class="bar">
-    
+
                         <div class="progress" id="progress-4" data-sizing="%" data-name="progress-4">
                             <div class="limit"></div>
                         </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
                     </div>
+
+
                 </div>
 
             </div>
@@ -112,26 +136,31 @@
 
         <h2>Prices</h2>
 
-
-
         <div class="calculators">
             <div class="calculator" id="calculator-5">
 
 
                 <div class="content">
                     <p>
-                        If the starting price is $<input type="text" class="starting-price"> and a <input type="text"
-                            class="discount">% discount is applied, the sale price is $ <span class="sale-price">-</span>.
+                        If the starting price is $ <input type="text" class="starting-price"> and a <input type="text"
+                            class="discount">% discount is applied, the sale price is $ <span
+                            class="sale-price">-</span>.
+                        You're saving $ <span class="saving">-</span>.
                     </p>
-    
+
                     <button type="submit">Calcular</button>
-    
-    
+
+
                     <div class="bar">
-    
+
                         <div class="progress" id="progress-5" data-sizing="%" data-name="progress-5">
+                            <span class="percent-value"></span>
                             <div class="limit"></div>
                         </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
+
                     </div>
                 </div>
             </div>
@@ -140,17 +169,24 @@
                 <div class="content">
                     <p>
                         If the starting price is $<input type="text" class="starting-price"> and a <input type="text"
-                            class="increase">% increase is applied, the sale price is $ <span class="sale-price">-</span>.
+                            class="increase">% increase is applied, the sale price is $ <span
+                            class="sale-price">-</span>.
+                        You're paying an additional $ <span class="excess">-</span>.
                     </p>
-    
+
                     <button type="submit">Calcular</button>
-    
-    
+
+
                     <div class="bar">
-    
+
+
+
                         <div class="progress" id="progress-6" data-sizing="%" data-name="progress-6">
                             <div class="limit"></div>
                         </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
                     </div>
                 </div>
             </div>
@@ -158,25 +194,29 @@
             <div class="calculator" id="calculator-7">
                 <div class="content">
                     <p>
-    
-                        If the starting price was $<input type="number" class="starting-price"> and the sale price is $
-                        <input type="number" class="sale-price">, <span class="percent">-</span>% has been applied.
-    
+
+                        <!-- If the starting price is $<input type="number" class="starting-price"> and the sale price is $
+                        <input type="number" class="sale-price">, <span class="sign"></span><span class="percent">-</span>% has been applied. -->
+                        If the starting price is $<input type="number" class="starting-price"> and the sale price is $
+                        <input type="number" class="sale-price">, you're paying <span class="percent"> </span>% <span
+                            class="sign"></span>.
                     </p>
-    
+
                     <button type="submit">Calcular</button>
-    
-    
+
+
                     <div class="bar">
-    
+
                         <div class="progress" id="progress-7" data-sizing="%" data-name="progress-7">
                             <div class="limit"></div>
                         </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
                     </div>
                 </div>
             </div>
         </div>
-
 
     </div>
 

@@ -7,6 +7,12 @@ const amount = calculator1.querySelector(".amount"),
 const bar = calculator1.querySelector(".bar");
 const progress = bar.querySelector(".progress");
 
+const percentValue = bar.querySelector(".percent-value");
+
+console.log(percentValue)
+
+const endingPoint = bar.querySelector(".ending-point");
+
 const submitButton = calculator1.querySelector("button");
 
 function updateVariable() {
@@ -15,8 +21,14 @@ function updateVariable() {
 
     document.documentElement.style.setProperty(`--${this.dataset.name}`, `${total}%`);
 
-    console.log(Number(percent.value) * Number(base.value) / 100)
+    //console.log(Number(percent.value) * Number(base.value) / 100)
     amount.textContent = Number(percent.value) * Number(base.value) / 100
+
+    // endingPoint.style.left = `${total}%`
+    percentValue.textContent = `${percent.value}%`
+
+    endingPoint.textContent = amount.textContent
+    endingPoint.style.left = `${total}%`
 }
 
 // percent.addEventListener("input", updateVariable.bind(progress))

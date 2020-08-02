@@ -7,6 +7,8 @@ const amount = calculator.querySelector(".amount"),
 const bar = calculator.querySelector(".bar");
 const progress = bar.querySelector(".progress");
 
+const endingPoint = bar.querySelector(".ending-point");
+
 const submitButton = calculator.querySelector("button");
 
 function updateTwo() {
@@ -17,6 +19,7 @@ function updateTwo() {
 
     base.textContent = Number(amount.value) * 100 / Number(percent.value)
     console.log("L")
+    endingPoint.style.left = `${total}%`
 }
 
 
