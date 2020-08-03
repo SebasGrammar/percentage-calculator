@@ -29,6 +29,11 @@ function update() {
     console.log("L")
 
     endingPoint.style.left = `${total}%`
+
+    percentValue.textContent = `${percent2.value}%`
+    endingPoint.textContent = percent2.textContent
+
+    end.textContent = amount2.textContent
 }
 
 // export function main() {

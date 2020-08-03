@@ -21,6 +21,8 @@ function update() {
 
     console.log(this.dataset.name)
 
+    const total = 100 - discount.value
+
     percent.textContent = Math.abs(100 - (Number(salePrice.value) * 100 / startingPrice.value))
     // percent.textContent = Number(salePrice.value) * 100 / startingPrice.value
     console.log(Number(startingPrice.value) < Number(salePrice.value))

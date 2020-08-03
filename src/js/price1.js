@@ -32,6 +32,14 @@ function update() {
     console.log(saving, salePrice, startingPrice)
     //document.documentElement.style.setProperty(`--progress-5`, `${total}%`);
     endingPoint.style.left = `${total}%`
+
+
+
+    percentValue.textContent = `2%`
+
+    endingPoint.textContent = salePrice.textContent
+
+    end.textContent = startingPrice.value
 }
 
 // export function main() {

@@ -28,12 +28,13 @@ function update() {
     document.documentElement.style.setProperty(`--${this.dataset.name}`, `${total}%`);
     console.log("L")
 
-    percentValue.textContent = `${percent.value}%`
+    percentValue.textContent = `${percent.textContent}%`
 
     endingPoint.style.left = `${total}%`
 
-    endingPoint.textContent = "2"
-    end.textContent = base.textContent
+    endingPoint.textContent = amount.value
+
+    end.textContent = base.value
 }
 
 // export function main() {

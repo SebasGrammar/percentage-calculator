@@ -167,7 +167,8 @@ button:visited {
     width: 20px;
     height: 100%;
 
-    color: #FFF;
+    /* color: #FFF; */
+    color: #000;
 }
 
 .starting-point {

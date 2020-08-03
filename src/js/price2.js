@@ -22,12 +22,19 @@ function update() {
 
     salePrice.textContent = Number(startingPrice.value) * (100 + Number(increase.value)) / 100
 
-    //const total = 100 - (100 - percent.textContent)
+    // const total = 100 - (100 - percent.textContent)
+    const total = 100 - 25
 
     //document.documentElement.style.setProperty(`--${this.dataset.name}`, `${total}%`);
     excess.textContent = Number(salePrice.textContent) - Number(startingPrice.value);
     console.log("L")
     endingPoint.style.left = `${total}%`
+
+    percentValue.textContent = `2%`
+
+    endingPoint.textContent = salePrice.textContent
+
+    end.textContent = salePrice.textContent
 }
 
 // export function main() {
