@@ -25,14 +25,29 @@ function update() {
     // const total = 100 - (100 - percent.textContent)
     const total = 100 - 25
 
-    let originalPrice = Number(startingPrice.value) + Number(profit.value)
+    // let originalPrice = Number(startingPrice.value) + Number(profit.value)
 
-    let holder = Number(percent.value) * originalPrice / 100
-    console.log(originalPrice)
+    // let holder = Number(percent.value) * originalPrice / 100
+    // console.log(originalPrice)
+    // console.log(holder)
     // salePrice.textContent = Number(percent.value) * originalPrice / 100;
 
-    salePrice.textContent = originalPrice + holder
+    // salePrice.textContent = originalPrice + holder
 
+    // salePrice.textContent = originalPrice + holder
+    
+    // let oe = Number(salePrice.textContent) * percent.value / 100
+
+    // salePrice.textContent = originalPrice + oe
+
+    let x = ( Number(startingPrice.value) + Number(profit.value) ) / ( 1 - (Number(percent.value) / 100 ) )
+
+    //salePrice.textContent = x.toFixed(2)
+    salePrice.textContent = Math.round(x)
+    console.log(x)
+
+    console.log(Number(startingPrice.value) + Number(profit.value))
+    console.log( 1 - (Number(percent.value) / 100 ))
 
     endingPoint.style.left = `${total}%`
 
