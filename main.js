@@ -12,6 +12,8 @@ import {main as mmm} from "./src/js/price2.js";
 
 import {main as mmmm} from "./src/js/price3.js";
 
+import {main as mmmmm} from "./src/js/price4.js";
+
 console.log(mai)
 
 // const calculator1 = document.querySelector("#calculator-1");
@@ -58,5 +60,6 @@ mai()
 mm()
 mmm()
 mmmm()
+mmmmm()
 
 console.log(main)
