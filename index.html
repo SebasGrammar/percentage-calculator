@@ -310,11 +310,17 @@
                         <!-- If the starting price is $<input type="number" class="starting-price"> and the sale price is $
                         <input type="number" class="sale-price">, <span class="sign"></span><span class="percent">-</span>% has been applied. -->
                         El costo unitario es de $<input type="number" class="starting-price"> y quiero ganarle  
-                        $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text" class="percent"> </span>%, entonces
-                        debo vender <span class="units">-</span>units in order to be able to buy another one.
+                        $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text" class="percent">%, entonces
+                        debo vender <span class="units">-</span> units in order to be able to buy another one.
                     </p>
 
-                    <p class="sale-price">-</p>
+                    <p>
+                        Total: $<span class="total"> -</span>
+                    </p>
+
+                    <p>Unit price: $<span class="sale-price"></span> -</p>
+
+                    <p>Excess: $ <span class="excess">-</span></p>
 
                     <button type="submit">Calcular</button>
 

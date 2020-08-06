@@ -3,6 +3,9 @@ const calculator = document.querySelector("#calculator-10");
 const startingPrice = calculator.querySelector(".starting-price"),
     percent = calculator.querySelector(".percent"),
     profit = calculator.querySelector(".profit"),
+    units = calculator.querySelector(".units"),
+    total = calculator.querySelector(".total"),
+    excess = calculator.querySelector(".excess"),
     salePrice = calculator.querySelector(".sale-price");
 
 const sign = calculator.querySelector(".sign");
@@ -23,7 +26,7 @@ function update() {
     console.log(this.dataset.name)
 
     // const total = 100 - (100 - percent.textContent)
-    const total = 100 - 25
+    //const total = 100 - 25 // different total from the one below
 
     // let originalPrice = Number(startingPrice.value) + Number(profit.value)
 
@@ -43,8 +46,27 @@ function update() {
     let x = ( Number(startingPrice.value) + Number(profit.value) ) / ( 1 - (Number(percent.value) / 100 ) )
 
     //salePrice.textContent = x.toFixed(2)
+    console.log(startingPrice.value)
+    // salePrice.textContent = Math.round(x) - startingPrice.value
     salePrice.textContent = Math.round(x)
     console.log(x)
+
+    let difference = 0;
+    let counter = 0;
+    
+
+    while (difference < Number(startingPrice.value)) {
+        difference += Number(profit.value)
+        counter += 1
+        console.log(counter)
+    }
+
+    excess.textContent = difference - Number(startingPrice.value);
+
+    units.textContent = counter
+    // excess.textContent = excess
+    console.log(difference)
+    total.textContent = Number(salePrice.textContent) * counter
 
     console.log(Number(startingPrice.value) + Number(profit.value))
     console.log( 1 - (Number(percent.value) / 100 ))
