@@ -16,7 +16,7 @@ import {main as mmmmm} from "./src/js/price4.js";
 
 import {main as mmmmmm} from "./src/js/price5.js";
 
-import {main as mmmmmmm} from "./src/js/price6.js";
+import {main as mmmmmmm} from "./src/js/price6_2.js";
 
 console.log(mai)
 

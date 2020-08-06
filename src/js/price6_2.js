@@ -6,6 +6,8 @@ const startingPrice = calculator.querySelector(".starting-price"),
     units = calculator.querySelector(".units"),
     total = calculator.querySelector(".total"),
     excess = calculator.querySelector(".excess"),
+    goal = calculator.querySelector(".goal"),
+    profitMade = calculator.querySelector(".profit-made"),
     salePrice = calculator.querySelector(".sale-price");
 
 const sign = calculator.querySelector(".sign");
@@ -43,16 +45,41 @@ function update() {
     }
 
     excess.textContent = difference - Number(startingPrice.value);
-
     units.textContent = counter
+    
     // excess.textContent = excess
     console.log(difference)
     total.textContent = Number(salePrice.textContent) * counter
+    profitMade.textContent = profit.value * counter
 
     console.log(Number(startingPrice.value) + Number(profit.value))
     console.log( 1 - (Number(percent.value) / 100 ))
 
+    let additionalProducts = 0;
+    let actual = 0;
+    console.log("OE")
+    console.log(Number(startingPrice.value) + Number(profit.value))
+    //let step = Number(salePrice.textContent)
+    let newProfit = 0;
+    let step = Number(startingPrice.value) + Number(profit.value)
+    let sp = 0;
 
+    
+
+    while (sp < Number(goal.value)) {
+        sp += step
+        newProfit += Number(profit.value)
+        if (newProfit > Number(startingPrice.value)) {
+            newProfit -= Number(startingPrice.value)
+            console.log("new profit:")
+            console.log(newProfit)
+        }
+        console.log(sp)
+        additionalProducts ++
+    }
+    
+    console.log(`New profit: ${newProfit}`)
+    console.log(`Additional products: ${additionalProducts}`)
     let ooo = difference;
 
     
