@@ -2,7 +2,8 @@ const calculator = document.querySelector("#calculator-7");
 
 const startingPrice = calculator.querySelector(".starting-price"),
     percent = calculator.querySelector(".percent"),
-    salePrice = calculator.querySelector(".sale-price");
+    salePrice = calculator.querySelector(".sale-price"),
+    difference = calculator.querySelector(".difference");
 
 const sign = calculator.querySelector(".sign");
 
@@ -12,6 +13,8 @@ const progress = bar.querySelector(".progress");
 const end = bar.querySelector(".end")
 
 const percentValue = bar.querySelector(".percent-value");
+
+
 
 const endingPoint = bar.querySelector(".ending-point");
 
@@ -33,6 +36,8 @@ function update() {
         sign.textContent = "more"
     }
 
+
+    difference.textContent = salePrice.value - startingPrice.value
     //const total = 100 - (100 - percent.textContent)
 
     //document.documentElement.style.setProperty(`--${this.dataset.name}`, `${total}%`);
