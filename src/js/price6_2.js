@@ -10,6 +10,9 @@ const startingPrice = calculator.querySelector(".starting-price"),
     profitMade = calculator.querySelector(".profit-made"),
     salePrice = calculator.querySelector(".sale-price");
 
+const actualTotal = calculator.querySelector(".actual-total"),
+    withProfit = calculator.querySelector(".with-profit");
+
 const sign = calculator.querySelector(".sign");
 
 const bar = calculator.querySelector(".bar");
@@ -80,6 +83,8 @@ function update() {
         additionalProducts ++
     }
     
+    actualTotal.textContent = sp // sp refers to the accumulated value
+    withProfit.textContent = Number(actualTotal.textContent) + actual * step
     console.log(`New profit: ${newProfit}`)
     //console.log(`Additional products: ${additionalProducts}`)
     console.log(`Actual products: ${actual}`)
