@@ -16,7 +16,9 @@ import {main as mmmmm} from "./src/js/price4.js";
 
 import {main as mmmmmm} from "./src/js/price5.js";
 
-import {main as mmmmmmm} from "./src/js/price6_2.js";
+import {main as mmmmmmm} from "./src/js/price6_3.js";
+
+import {main as mmmmmmmm} from "./src/js/price7.js";
 
 console.log(mai)
 
@@ -67,5 +69,6 @@ mmmm()
 mmmmm()
 mmmmmm()
 mmmmmmm()
+mmmmmmmm()
 
 console.log(main)

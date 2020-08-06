@@ -251,8 +251,9 @@
 
                         <!-- If the starting price is $<input type="number" class="starting-price"> and the sale price is $
                         <input type="number" class="sale-price">, <span class="sign"></span><span class="percent">-</span>% has been applied. -->
-                        El costo unitario es de $<input type="number" class="starting-price"> y quiero ganarle  
-                        $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text" class="percent"> </span>%, entonces
+                        El costo unitario es de $<input type="number" class="starting-price"> y quiero ganarle
+                        $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text"
+                            class="percent"> </span>%, entonces
                         debo vender cada unidad a <span class="sale-price"></span>.
                     </p>
 
@@ -280,8 +281,10 @@
 
                         <!-- If the starting price is $<input type="number" class="starting-price"> and the sale price is $
                         <input type="number" class="sale-price">, <span class="sign"></span><span class="percent">-</span>% has been applied. -->
-                        El precio de venta del producto es de $<input type="number" class="starting-price"> y quiero ganarle  
-                        $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text" class="percent"> </span>%, entonces
+                        El precio de venta del producto es de $<input type="number" class="starting-price"> y quiero
+                        ganarle
+                        $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text"
+                            class="percent"> </span>%, entonces
                         el precio al que debo comprar cada unidad es de <span class="sale-price"></span>.
                     </p>
 
@@ -303,12 +306,10 @@
                 </div>
             </div>
 
-            <div class="calculator" id="calculator-10">
+            <!-- <div class="calculator" id="calculator-10">
                 <div class="content">
                     <p>
 
-                        <!-- If the starting price is $<input type="number" class="starting-price"> and the sale price is $
-                        <input type="number" class="sale-price">, <span class="sign"></span><span class="percent">-</span>% has been applied. -->
                         El costo unitario es de $<input type="number" class="starting-price"> y quiero ganarle  
                         $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text" class="percent">%, entonces
                         debo vender <span class="units">-</span> units in order to be able to buy another one with the profit made.
@@ -331,6 +332,112 @@
                     <p>Excess (or money left after buying extra unit): $ <span class="excess">-</span></p>
 
                     <p>Investment goal: $ <input class="goal"></p>
+
+
+                    <p>You can buy <span class="can-buy">-</span></p>
+                    <p>left: $<span class="left">-</span> </p>
+
+                    <button type="submit">Calcular</button>
+
+
+                    <div class="bar">
+
+                        <div class="progress" id="progress-10" data-sizing="%" data-name="progress-10">
+                            <span class="percent-value"></span>
+                            <div class="limit"></div>
+                        </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
+
+                        <div class="end"></div>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="calculator" id="calculator-10">
+                <div class="content">
+                    <p>
+
+                        El costo unitario es de $<input type="number" class="starting-price"> y quiero ganarle
+                        $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text"
+                            class="percent">%, entonces
+                        debo vender <span class="units">-</span> units in order to be able to buy another one with the
+                        profit made.
+                    </p>
+
+                    <p>
+                        Total (sale price * units you need to sell to make enough profit to buy another unit): $<span class="total"> -</span>
+                    </p>
+
+                    <p>Unit price: $<span class="sale-price"></span> -</p>
+
+                    <p>Profit made (after selling the x units needed to buy another): $ <span class="profit-made">-</span></p>
+
+                    <p>actual info: --------------------</p>
+
+                    <p>actual total: <span class="actual-total"></span> </p>
+
+                    <p>total after also selling units bought with profit: <span class="with-profit">-</span> </p>
+
+                    <p>Excess (or money left after buying extra unit): $ <span class="excess">-</span></p>
+
+                    <p>Investment goal: $ <input class="goal"></p>
+
+
+                    <p>You can buy <span class="can-buy">-</span></p>
+                    <p>left: $<span class="left">-</span> </p>
+
+                    <button type="submit">Calcular</button>
+
+
+                    <div class="bar">
+
+                        <div class="progress" id="progress-10" data-sizing="%" data-name="progress-10">
+                            <span class="percent-value"></span>
+                            <div class="limit"></div>
+                        </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
+
+                        <div class="end"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculator" id="calculator-11">
+                <div class="content">
+                    <p>
+
+                        El costo unitario es de $<input type="number" class="starting-price"> y quiero ganarle
+                        $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text"
+                            class="percent">%, entonces
+                        debo vender <span class="units">-</span> units in order to be able to buy another one with the
+                        profit made.
+                    </p>
+
+                    <p>
+                        Total (sale price * units you need to sell to make enough profit to buy another unit): $<span class="total"> -</span>
+                    </p>
+
+                    <p>Unit price: $<span class="sale-price"></span> -</p>
+
+                    <p>Profit made (after selling the x units needed to buy another): $ <span class="profit-made">-</span></p>
+
+                    <p>actual info: --------------------</p>
+
+                    <p>actual total: <span class="actual-total"></span> </p>
+
+                    <p>total after also selling units bought with profit: <span class="with-profit">-</span> </p>
+
+                    <p>Excess (or money left after buying extra unit): $ <span class="excess">-</span></p>
+
+                    <p>Investment goal: $ <input class="goal"></p>
+
+
+                    <p>You can buy <span class="can-buy">-</span></p>
+                    <p>left: $<span class="left">-</span> </p>
 
                     <button type="submit">Calcular</button>
 
