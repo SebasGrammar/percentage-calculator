@@ -70,16 +70,19 @@ function update() {
         sp += step
         newProfit += Number(profit.value)
         if (newProfit > Number(startingPrice.value)) {
+            console.log(`excess: ${newProfit}`)
             newProfit -= Number(startingPrice.value)
-            console.log("new profit:")
+            console.log(`You have ${newProfit} left over.`)
             console.log(newProfit)
+            actual ++
         }
         console.log(sp)
         additionalProducts ++
     }
     
     console.log(`New profit: ${newProfit}`)
-    console.log(`Additional products: ${additionalProducts}`)
+    //console.log(`Additional products: ${additionalProducts}`)
+    console.log(`Actual products: ${actual}`)
     let ooo = difference;
 
     
