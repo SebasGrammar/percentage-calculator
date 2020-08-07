@@ -13,6 +13,11 @@ const startingPrice = calculator.querySelector(".starting-price"),
 const actualTotal = calculator.querySelector(".actual-total"),
     withProfit = calculator.querySelector(".with-profit");
 
+const actualInvestment = calculator.querySelector(".actual-investment");
+const actuallyMade = calculator.querySelector(".actually-made");
+
+const moneyNeeded = calculator.querySelector(".money-needed")
+
 
 /* TESTS */
 
@@ -73,6 +78,7 @@ function update() {
     let step = Number(startingPrice.value) + Number(profit.value)
     let sp = 0;
 
+    // products that can be bought with profit
     while (sp < Number(goal.value)) {
         sp += step
         newProfit += Number(profit.value)
@@ -94,18 +100,26 @@ function update() {
 
     canBuy.textContent = unitsICanBuy
     left.textContent = Number(goal.value) - Number(startingPrice.value) * unitsICanBuy
+
+    moneyNeeded.textContent = Number(startingPrice.value) - Number(left.textContent)
+
     console.log(`left: ${left.textContent}`)
     console.log(`oeoeoeoe ${overallPrice * unitsICanBuy}`)
     console.log(unitsICanBuy * overallPrice)
 
-    actualTotal.textContent = sp // sp refers to the accumulated value
+    // actualTotal.textContent = sp // sp refers to the accumulated value
+
+    actualTotal.textContent = overallPrice * unitsICanBuy
+
     withProfit.textContent = Number(actualTotal.textContent) + actual * step
     console.log(`New profit: ${newProfit}`)
     //console.log(`Additional products: ${additionalProducts}`)
     console.log(`Actual products: ${actual}`)
     let ooo = difference;
 
-    
+    actualInvestment.textContent = Number(goal.value) - Number(left.textContent)
+
+    actuallyMade.textContent = Number(profit.value) * unitsICanBuy
 
     endingPoint.style.left = `${total}%`
 
