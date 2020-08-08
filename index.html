@@ -355,7 +355,7 @@
                 </div>
             </div> -->
 
-            <div class="calculator" id="calculator-10">
+            <div class="calculator" id="calculator-10" style="background: orange">
                 <div class="content">
                     <p>
 
@@ -394,6 +394,8 @@
 
                     <p>actual total after also selling units bought with profit: <span class="with-profit">-</span> </p>
 
+                    <p>You now have <span class="current">-</span> (money made after selling + left over)</p>
+
                     <!-- <p>Excess (or money left after buying extra unit): $ <span class="excess">-</span></p> -->
 
                     <p>Investment goal: $ <input class="goal"></p>
@@ -420,7 +422,7 @@
                 </div>
             </div>
 
-            <div class="calculator" id="calculator-11">
+            <div class="calculator" id="calculator-11" style="background: orange">
                 <div class="content">
                     <p>
 
@@ -464,6 +466,49 @@
                     <div class="bar">
 
                         <div class="progress" id="progress-10" data-sizing="%" data-name="progress-10">
+                            <span class="percent-value"></span>
+                            <div class="limit"></div>
+                        </div>
+
+                        <div class="starting-point">0</div>
+                        <div class="ending-point"></div>
+
+                        <div class="end"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculator" id="calculator-12">
+                <div class="content">
+                    <p>Precio unitario: $ <input type="text" class="starting-price"></p>
+                    <p>Profit: $ <input type="text" class="profit"></p>
+                    <p>Comisión: % <input type="text" class="percent"></p>
+                    <p>Sale price: $ <span class="sale-price"></span></p>
+
+                    <p>
+                        Si comienzo invirtiendo $<input type="text" class="initial-investment">, inicialmente podría comprar <span class="units">-</span>
+                        unidades.
+
+                        <p>Cantidad invertida: $<span class="actual-investment">-</span></p>
+                        <p>Cantidad sobrante: $<span class="left-over">-</span></p>
+
+                        <p>Objetivo: $<input type="text" class="goal"></p>
+                        <p>Tras alcanzar el objetivo propuesto y haber vendido <span class="total-units">-</span> unidades, el total es de $<span class="total"></span>.</p>
+                        <p>Ciclos: <span class="cycles">-</span></p>
+<!-- 
+                        El precio de venta del producto es de $<input type="number" class="starting-price"> y quiero
+                        ganarle
+                        $<input type="text" class="profit">, a cada producto. Si la comisión es de <input type="text"
+                            class="percent"> </span>%, entonces
+                        el precio al que debo comprar cada unidad es de <span class="sale-price"></span>. -->
+                    </p>
+
+                    <button type="submit">Calcular</button>
+
+
+                    <div class="bar">
+
+                        <div class="progress" id="progress-12" data-sizing="%" data-name="progress-12">
                             <span class="percent-value"></span>
                             <div class="limit"></div>
                         </div>

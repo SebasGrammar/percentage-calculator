@@ -18,6 +18,7 @@ const actuallyMade = calculator.querySelector(".actually-made");
 
 const moneyNeeded = calculator.querySelector(".money-needed")
 
+const current = calculator.querySelector(".current")
 
 /* TESTS */
 
@@ -128,6 +129,9 @@ function update() {
     endingPoint.textContent = salePrice.textContent
 
     end.textContent = salePrice.textContent
+
+
+    current.textContent =  Number(actualTotal.textContent) + Number(left.textContent)
 }
 
 // export function main() {
