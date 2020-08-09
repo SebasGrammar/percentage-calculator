@@ -480,20 +480,25 @@
 
             <div class="calculator" id="calculator-12">
                 <div class="content">
-                    <p>Precio unitario: $ <input type="text" class="starting-price"></p>
-                    <p>Profit: $ <input type="text" class="profit"></p>
+                    <p>Precio unitario: $ <input type="text" class="starting-price" value="21500"></p>
+                    <p>Profit: $ <input type="text" class="profit" value="6000"></p>
                     <p>Comisión: % <input type="text" class="percent"></p>
                     <p>Sale price: $ <span class="sale-price"></span></p>
 
                     <p>
-                        Si comienzo invirtiendo $<input type="text" class="initial-investment">, inicialmente podría comprar <span class="units">-</span>
+                        Si comienzo invirtiendo $<input type="text" class="initial-investment" value="150000">, inicialmente podría comprar <span class="units">-</span>
                         unidades.
 
-                        <p>Cantidad invertida: $<span class="actual-investment">-</span></p>
+                        <!-- <p>Cantidad invertida (de hecho, total después de vender...): $<span class="actual-investment">-</span></p> -->
+                        <p>Cantidad invertida: $<span class="test"></span></p>
                         <p>Cantidad sobrante: $<span class="left-over">-</span></p>
+                        <p>Revenue: $<span class="actual-investment">-</span></p> <!-- notactual investment, this is the revenue -->
+                        <!-- <p>Ganancias totales desde la primera inversión: $<span class="profit-on-investment"></span></p> -->
+                        <p>Ganancias tras la última inversión: $<span class="profit-on-investment"></span></p>
+                        <p>Ganancias totales desde la primera inversión: $<span class="overall-profit">-</span></p>
 
-                        <p>Objetivo: $<input type="text" class="goal"></p>
-                        <p>Tras alcanzar el objetivo propuesto y haber vendido <span class="total-units">-</span> unidades, el total es de $<span class="total"></span>.</p>
+                        <p>Objetivo: $<input type="text" class="goal" value="150000"></p>
+                        <p>Tras alcanzar el objetivo propuesto y haber vendido <span class="total-units">-</span> unidades, el total es de $<span class="total"></span>. (contando lo que queda cuando no se puede comprar una unidad... tengo que calcular las ganancias netas).</p>
                         <p>Ciclos: <span class="cycles">-</span></p>
 <!-- 
                         El precio de venta del producto es de $<input type="number" class="starting-price"> y quiero

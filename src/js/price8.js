@@ -12,9 +12,12 @@ console.log(profit)
 const initialInvestment = calculator.querySelector(".initial-investment"),
     initialUnits = calculator.querySelector(".units"),
     actualInvestment = calculator.querySelector(".actual-investment"),
+    test = calculator.querySelector(".test"), // actually invested...
     leftOver = calculator.querySelector(".left-over"),
     goal = calculator.querySelector(".goal"),
     totalProfit = calculator.querySelector(".total"),
+    profitOnInvestment = calculator.querySelector(".profit-on-investment"),
+    overallProfit = calculator.querySelector(".overall-profit"),
     totalUnits = calculator.querySelector(".total-units"),
     totalCycles = calculator.querySelector(".cycles");
 
@@ -43,7 +46,12 @@ function calculate() {
     if (investment === Number(goal.value)) {
         let revenue = units * (unitPrice + Number(profit.value))
 
+        let left = investment - (unitPrice * units)
+        leftOver.textContent = left
+
         money = revenue + investment - (unitPrice * units)
+
+        actualInvestment.textContent = revenue
 
     } else if (investment <= Number(goal.value)) {
 
@@ -70,11 +78,36 @@ function calculate() {
 
     }
 
+    test.textContent = investment - (investment - units * Number(startingPrice.value))
+    profitOnInvestment.textContent = Number(actualInvestment.textContent) - Number(test.textContent)
+
+
+    // if (cycles === 0) {
+    //     // overallProfit.textContent = Number(actualInvestment.textContent) - Number(initialInvestment.value)
+    //     // overallProfit.textContent = Number(actualInvestment.textContent) - Number(initialInvestment.value)
+
+    //     overallProfit.textContent = Number(totalProfit.textContent) - Number(initialInvestment.value)
+    // } else {
+    //     // overallProfit.textContent = Number(actualInvestment.textContent) - Number(initialInvestment.value)
+    //     //overallProfit.textContent = total - Number(initialInvestment.value)
+    // }
     // totalProfit.textContent = units * price
     // actualInvestment.textContent = money
     totalProfit.textContent = money
     totalCycles.textContent = cycles
     totalUnits.textContent = units
+
+    if (cycles === 0) {
+        // overallProfit.textContent = Number(actualInvestment.textContent) - Number(initialInvestment.value)
+        // overallProfit.textContent = Number(actualInvestment.textContent) - Number(initialInvestment.value)
+
+        // overallProfit.textContent = Number(totalProfit.textContent) - Number(initialInvestment.value)
+        overallProfit.textContent = Number(totalProfit.textContent) - Number(initialInvestment.value)
+    } else {
+        // overallProfit.textContent = Number(actualInvestment.textContent) - Number(initialInvestment.value)
+        //overallProfit.textContent = total - Number(initialInvestment.value)
+        overallProfit.textContent = Number(totalProfit.textContent) - Number(initialInvestment.value)
+    }
 
 }
 
