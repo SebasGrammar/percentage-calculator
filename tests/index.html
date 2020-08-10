@@ -16,30 +16,53 @@
             <p class="price"><span class="currency-sign">$</span><span class="sale-price">35.000</span></p>
 
             <div class="info">
-                <p>$<span class="profit">-</span></p>
+                <div class="group">
+                    <h3>Profit</h3>
+                    <p>$ <span class="profit">-</span></p>
+                </div>
 
-                <p>$<span class="unit-price">-</span></p>
+                <div class="group">
+                    <h3>Unit price</h3>
+                    <p>$ <span class="unit-price">-</span></p>
+                </div>
+
+                <div class="group">
+                    <h3>Commission value</h3>
+                    <p>$ <span class="commission-value">-</span></p>
+                </div>
             </div>
         </div>
 
         <form action="" class="parameters">
-            <label for="buying-price">Buying price</label>
-            <input type="text" name="buying-price" class="buying-price">
-
             <div class="row">
+
+                <div class="data">
+                    <label for="buying-price">Buying price</label>
+                    <input type="text" name="buying-price" class="buying-price" value="21500">
+                </div>
+
                 <div class="data">
                     <label for="desired-profit">Desired profit per unit</label>
-                    <input type="text" name="desired-profit" class="desired-profit">
+                    <input type="text" name="desired-profit" class="desired-profit" value="6000">
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="data">
+                    <label for="shipping">Shipping</label>
+                    <input type="text" name="shipping" class="shipping" value="4600">
                 </div>
 
                 <div class="data">
                     <label for="units">Units</label>
-                    <input type="text" name="units" class="units">
+                    <input type="text" name="units" class="units" value="3">
                 </div>
             </div>
 
             <label for="commission">Commission</label>
-            <input type="text" name="commission" class="commission">
+            <input type="text" name="commission" class="commission" value="16">
         </form>
 
         <div class="center">
