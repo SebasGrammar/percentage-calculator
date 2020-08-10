@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="calculator">
+        <div class="info-display">
+            <p class="price"><span class="currency-sign">$</span><span class="sale-price">35.000</span></p>
+
+            <div class="info">
+                <p>$<span class="profit">-</span></p>
+
+                <p>$<span class="unit-price">-</span></p>
+            </div>
+        </div>
+
+        <form action="" class="parameters">
+            <label for="buying-price">Buying price</label>
+            <input type="text" name="buying-price" class="buying-price">
+
+            <div class="row">
+                <div class="data">
+                    <label for="desired-profit">Desired profit per unit</label>
+                    <input type="text" name="desired-profit" class="desired-profit">
+                </div>
+
+                <div class="data">
+                    <label for="units">Units</label>
+                    <input type="text" name="units" class="units">
+                </div>
+            </div>
+
+            <label for="commission">Commission</label>
+            <input type="text" name="commission" class="commission">
+        </form>
+
+        <div class="center">
+            <button class="calculate-button">Calculate</button>
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+/*****APP*****/
+
+.calculator {
+    width: 350px;
+    height: 350px;
+    background: #e1f0fa;
+}
+
+/***************/
+
+.info-display {}
+
+/* .sale-price {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 2.5rem;
+} */
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 2.5rem;
+}
+
+.sale-price {
+
+}
+
+.currency-sign {
+    padding: 10px;
+    font-size: 50%;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0 80px;
+}
+
+/******************/
+
+.parameters {
+    display: flex;
+    flex-direction: column;
+
+    background: #303F9F;
+
+    color: #FFF;
+}
+
+.buying-price {
+
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    
+}
+
+.data {
+    
+}
