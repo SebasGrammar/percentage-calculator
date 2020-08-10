@@ -44,3 +44,12 @@ buyingPrice.addEventListener("change", function() {
     // 87100 - 4600 = 82500
 
 */
+
+/*
+
+FORMULAS_
+
+// salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee;
+// salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee + 876; // If I add 876 it works... WHY?!!!
+
+*/

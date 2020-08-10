@@ -22,6 +22,7 @@ const buyingPrice = calculator.querySelector(".buying-price"),
 const calculateButton = calculator.querySelector(".calculate-button");
 
 function calculate() {
+    
     // Buying price -> how much does each unit cost?
     let price = Number(buyingPrice.value);
 
@@ -41,27 +42,11 @@ function calculate() {
     let unitSellingPrice = Math.round((price + profit) / (1 - commissionFee / 100))
 
     // CONTENT
-
-    // 102.814 -> wrong
- 
-    // 103.690 -> right -> 27500 * 3 = 82500
-
-    // salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee;
-    // TEST // THE ONE THAT WORKS IS ABOVE. THIS IS JUST A TEST. // REMOVE THIS 
-    // salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee + 876; // If I add 876 it works... WHY?!!!
-    //salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee + (19.043478260869566 * shippingFee / 100); // If I add 876 it works... WHY?!!!
-    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) ); // If I add 876 it works... WHY?!!!
-
-    // WEIRD... WHY IS THIS SO ACCURATE? HMMMM.... // REMOVE THIS ... and everything that's all the way up from here till the next comment that says REMOVE THIS lol
+    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
     profits.textContent = profit * numberOfUnits;
     unitPrice.textContent = unitSellingPrice;
     commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
 
-    // TEST AREA LOL
-
-    let test = unitSellingPrice * numberOfUnits
-    console.log(test)
-    
 }
 
 calculateButton.addEventListener("click", calculate)
