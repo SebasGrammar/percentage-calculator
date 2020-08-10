@@ -46,7 +46,13 @@ function calculate() {
  
     // 103.690 -> right -> 27500 * 3 = 82500
 
-    salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee;
+    // salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee;
+    // TEST // THE ONE THAT WORKS IS ABOVE. THIS IS JUST A TEST. // REMOVE THIS 
+    // salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee + 876; // If I add 876 it works... WHY?!!!
+    //salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee + (19.043478260869566 * shippingFee / 100); // If I add 876 it works... WHY?!!!
+    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) ); // If I add 876 it works... WHY?!!!
+
+    // WEIRD... WHY IS THIS SO ACCURATE? HMMMM.... // REMOVE THIS ... and everything that's all the way up from here till the next comment that says REMOVE THIS lol
     profits.textContent = profit * numberOfUnits;
     unitPrice.textContent = unitSellingPrice;
     commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
@@ -56,25 +62,6 @@ function calculate() {
     let test = unitSellingPrice * numberOfUnits
     console.log(test)
     
-    // 102.814 - 4600
-
-    // price without shipping -> 98214 + (fees with shipping - fees without shipping)
-    // 16450 - 15714
-
-    // = 98950 - fee with shipping
-    // / 3 = BOOOM! (units)
-    let priceWithoutShipping = Number(salePrice.textContent) - shippingFee;
-    let feesWithShipping = Math.round( commissionFee * Number(salePrice.textContent) / 100)
-    let feesWithoutShipping = Math.round( commissionFee * ( Number(salePrice.textContent) - shippingFee ) / 100)
-    let o = priceWithoutShipping + (feesWithShipping - feesWithoutShipping) - feesWithShipping;
-    console.log (unitSellingPrice)
-    console.log(o)
-
-    
-
-    // the commission is applied on the fucking price... so the shipping has nothing to do with any of this?
-    // I mean... does it have anything to do with the final price? shouldn't it be calculated after the fee has been applied?
-
 }
 
 calculateButton.addEventListener("click", calculate)
