@@ -44,16 +44,33 @@ function calculate() {
 
     // 102.814 -> wrong
  
-    // 130.690 -> right -> 27500 * 3 = 82500
+    // 103.690 -> right -> 27500 * 3 = 82500
 
     salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee;
     profits.textContent = profit * numberOfUnits;
     unitPrice.textContent = unitSellingPrice;
     commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
 
-    // commissionValue.textContent = Math.round( commissionFee * ( unitSellingPrice * numberOfUnits ) / 100); // without shipping fee
+    // TEST AREA LOL
 
-    // amount.textContent = Number(percent.value) * Number(base.value) / 100
+    let test = unitSellingPrice * numberOfUnits
+    console.log(test)
+    
+    // 102.814 - 4600
+
+    // price without shipping -> 98214 + (fees with shipping - fees without shipping)
+    // 16450 - 15714
+
+    // = 98950 - fee with shipping
+    // / 3 = BOOOM! (units)
+    let priceWithoutShipping = Number(salePrice.textContent) - shippingFee;
+    let feesWithShipping = Math.round( commissionFee * Number(salePrice.textContent) / 100)
+    let feesWithoutShipping = Math.round( commissionFee * ( Number(salePrice.textContent) - shippingFee ) / 100)
+    let o = priceWithoutShipping + (feesWithShipping - feesWithoutShipping) - feesWithShipping;
+    console.log (unitSellingPrice)
+    console.log(o)
+
+    
 
     // the commission is applied on the fucking price... so the shipping has nothing to do with any of this?
     // I mean... does it have anything to do with the final price? shouldn't it be calculated after the fee has been applied?
