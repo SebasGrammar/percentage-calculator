@@ -32,6 +32,9 @@ body {
 /*****APP*****/
 
 .calculator {
+    display: grid;
+    grid-template-rows: 2fr 2fr 0.5fr;
+
     width: 350px;
     height: 350px;
     background: #e1f0fa;
@@ -39,7 +42,11 @@ body {
 
 /***************/
 
-.info-display {}
+.info-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 /* .sale-price {
     display: flex;
