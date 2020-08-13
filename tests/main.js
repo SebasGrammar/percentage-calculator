@@ -51,7 +51,25 @@ function calculate() {
     let shipp = y / x
 
     // CONTENT
-    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
+    // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
+    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
+
+
+    // 0.852996673604762%
+    /* TEST */
+
+    let amount1 = unitSellingPrice * numberOfUnits
+
+    console.log(amount1)
+
+    let amount2 = unitSellingPrice * numberOfUnits + shippingFee
+
+    console.log(amount2)
+
+
+    /* TEST ABOVE */
+
+
     // THE ONE ABOVE IS THE ORIGINAL. THE ONE BELOW IS A TEST
     // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp );
     profits.textContent = profit * numberOfUnits;
@@ -60,7 +78,7 @@ function calculate() {
 
     //let x = (1 - 4600 - 0.16)/3
 
-    console.log(x)
+    //console.log(x)
 
     // // let adjustedPrice = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
     // let adjustement = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
