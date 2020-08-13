@@ -39,16 +39,26 @@ function calculate() {
     let shippingFee = Number(shipping.value);
 
     // Price after applying selling fees (commission)
-    let unitSellingPrice = Math.round((price + profit) / (1 - commissionFee / 100))
+    // let unitSellingPrice = Math.round((price + profit) / (1 - commissionFee / 100))
+    let unitSellingPrice = (price + profit) / (1 - commissionFee / 100)
+
+
+    /* TEST */
+
+    let x = numberOfUnits * (1 - commissionFee / 100)
+    let y = numberOfUnits * shippingFee
+
+    let shipp = y / x
 
     // CONTENT
-    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
-    //salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee);
+    //salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
+    // THE ONE ABOVE IS THE ORIGINAL. THE ONE BELOW IS A TEST
+    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp );
     profits.textContent = profit * numberOfUnits;
-    unitPrice.textContent = unitSellingPrice;
+    unitPrice.textContent = Math.round(unitSellingPrice);
     commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
 
-    let x = (1 - 4600 - 0.16)/3
+    //let x = (1 - 4600 - 0.16)/3
 
     console.log(x)
 
