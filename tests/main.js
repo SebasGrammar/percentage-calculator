@@ -47,6 +47,15 @@ function calculate() {
     unitPrice.textContent = unitSellingPrice;
     commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
 
+    // let adjustedPrice = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
+    let adjustement = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
+    console.log(adjustement)
+    // let lack = ( numberOfUnits * ( price + profit ) ) - adjustement;
+    let lack = price + profit - adjustement;
+    console.log(lack)
+    let adjustedPrice = Number(salePrice.textContent) + lack * numberOfUnits;
+    console.log(adjustedPrice)
+
 }
 
 calculateButton.addEventListener("click", calculate)
