@@ -51,9 +51,9 @@ function calculate() {
     let shipp = y / x
 
     // CONTENT
-    //salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
+    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
     // THE ONE ABOVE IS THE ORIGINAL. THE ONE BELOW IS A TEST
-    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp );
+    // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp );
     profits.textContent = profit * numberOfUnits;
     unitPrice.textContent = Math.round(unitSellingPrice);
     commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
