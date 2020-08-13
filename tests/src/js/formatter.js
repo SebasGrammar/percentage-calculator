@@ -6,7 +6,7 @@ const formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2
 })
 
-buyingPrice.addEventListener("change", function() {
+buyingPrice.addEventListener("change", function () {
     let value = this.value
     console.log(value)
     this.value = formatter.format(value)
@@ -51,5 +51,18 @@ FORMULAS_
 
 // salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee;
 // salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee + 876; // If I add 876 it works... WHY?!!!
+
+*/
+
+/*
+
+    // let adjustedPrice = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
+    let adjustement = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
+    console.log(adjustement)
+    // let lack = ( numberOfUnits * ( price + profit ) ) - adjustement;
+    let lack = price + profit - adjustement;
+    console.log(lack)
+    let adjustedPrice = Number(salePrice.textContent) + lack * numberOfUnits;
+    console.log(adjustedPrice)
 
 */

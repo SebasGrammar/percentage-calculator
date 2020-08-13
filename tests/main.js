@@ -43,18 +43,24 @@ function calculate() {
 
     // CONTENT
     salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
+    //salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee);
     profits.textContent = profit * numberOfUnits;
     unitPrice.textContent = unitSellingPrice;
     commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
 
-    // let adjustedPrice = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
-    let adjustement = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
-    console.log(adjustement)
-    // let lack = ( numberOfUnits * ( price + profit ) ) - adjustement;
-    let lack = price + profit - adjustement;
-    console.log(lack)
-    let adjustedPrice = Number(salePrice.textContent) + lack * numberOfUnits;
-    console.log(adjustedPrice)
+    let x = (1 - 4600 - 0.16)/3
+
+    console.log(x)
+
+    // // let adjustedPrice = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
+    // let adjustement = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
+    // console.log(adjustement)
+    // // let lack = ( numberOfUnits * ( price + profit ) ) - adjustement;
+    // let lack = price + profit - adjustement;
+    // console.log(lack)
+    // let adjustedPrice = Number(salePrice.textContent) + lack * numberOfUnits;
+    // // console.log(Math.round(adjustedPrice))
+    // console.log(price + profit - lack)
 
 }
 
