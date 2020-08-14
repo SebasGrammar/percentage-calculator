@@ -59,7 +59,7 @@ function calculate() {
 
     let z = numberOfUnits * 500
     let ext = z / x
-
+    console.log(ext)
     /* TEST ABOVE */
 
     //let w = numberOfUnits * ()
