@@ -52,10 +52,17 @@ function calculate() {
 
     // CONTENT
     // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
-    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
+    let w = Math.round( unitSellingPrice * numberOfUnits + shipp);
+    
+    if (w < 70000) {
+    //  salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
+        "SMALler"
+        //w += 500
+        commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100) + 500;
+    } 
+    // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
+    salePrice.textContent = w + 500;
 
-
-    // 0.852996673604762%
     /* TEST */
 
     let amount1 = unitSellingPrice * numberOfUnits
@@ -74,21 +81,9 @@ function calculate() {
     // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp );
     profits.textContent = profit * numberOfUnits;
     unitPrice.textContent = Math.round(unitSellingPrice);
-    commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
+    // commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
+    
 
-    //let x = (1 - 4600 - 0.16)/3
-
-    //console.log(x)
-
-    // // let adjustedPrice = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
-    // let adjustement = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
-    // console.log(adjustement)
-    // // let lack = ( numberOfUnits * ( price + profit ) ) - adjustement;
-    // let lack = price + profit - adjustement;
-    // console.log(lack)
-    // let adjustedPrice = Number(salePrice.textContent) + lack * numberOfUnits;
-    // // console.log(Math.round(adjustedPrice))
-    // console.log(price + profit - lack)
 
 }
 
