@@ -81,7 +81,9 @@ function calculate() {
         salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp + ext);
 
         // THERE IS A DIFFERENCE OF 500!!!!
-    } 
+    } else {
+        salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
+    }
     // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
     //salePrice.textContent = w;
 
