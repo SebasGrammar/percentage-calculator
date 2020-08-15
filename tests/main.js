@@ -77,4 +77,9 @@ function calculate() {
 
 }
 
-calculateButton.addEventListener("click", calculate)
+// calculateButton.addEventListener("click", calculate)
+calculateButton.addEventListener("click", function(event) {
+    event.preventDefault()
+    // event.stopPropagation()
+    calculate()
+})
