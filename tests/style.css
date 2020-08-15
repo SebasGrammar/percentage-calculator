@@ -15,12 +15,14 @@ body {
     height: 100vh;
 }
 
-.group {
+/* .group {
     display: flex;
     flex-direction: column;
     justify-self: center;
     align-items: center;
-}
+
+    font-size: 0.8rem;
+} */
 
 .center {
     display: flex;
@@ -32,8 +34,8 @@ body {
 /*****APP*****/
 
 .calculator {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     background: #e1f0fa;
 }
 
@@ -56,28 +58,42 @@ body {
     font-size: 2.5rem;
 }
 
-.sale-price {
-
-}
-
 .currency-sign {
     padding: 10px;
     font-size: 50%;
 }
 
+.sale-price {
+
+}
+
 .info {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
+
 
     /* padding: 0 80px; */
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    
 }
+
+.group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* I was using justify-self instead of justify-content ... */
+    align-items: center;
+
+    text-align: center;
+    font-size: 0.8rem;
+}
+
 
 /******************/
 
 .parameters {
-    display: flex;
-    flex-direction: column;
-
+    
     background: #303F9F;
 
     color: #FFF;
@@ -88,12 +104,16 @@ body {
 }
 
 .row {
-
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+
+    
     
 }
 
 .data {
-    
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 10px;
 }
