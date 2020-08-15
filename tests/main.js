@@ -1,3 +1,5 @@
+import {initialize} from "./src/js/formatter.js";
+
 // CALCULATOR
 
 const calculator = document.querySelector(".calculator");
@@ -21,6 +23,8 @@ const buyingPrice = calculator.querySelector(".buying-price"),
     additionalFee = calculator.querySelector(".extra-fee");
 
 // TRIGGER
+
+initialize()
 
 const calculateButton = calculator.querySelector(".calculate-button");
 

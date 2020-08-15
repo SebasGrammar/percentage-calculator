@@ -1,74 +1,98 @@
-// FORMATTER
+// let currencyFields = document.querySelectorAll("input")
+let currencyFields = document.querySelectorAll("input[data-type='currency']")
 
-const formatter = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2
-})
+// for (let field of currencyFields) {
+//   field.addEventListener("keyup", function() {
+//     console.log(this)
+//     console.log(this.value)
+//     formatCurrency(this)
+//   })
+// }
 
-buyingPrice.addEventListener("change", function () {
-    let value = this.value
-    console.log(value)
-    this.value = formatter.format(value)
-})
+export function initialize() {
+    for (let field of currencyFields) {
+        field.addEventListener("keyup", function () {
+            console.log(this)
+            console.log(this.value)
+            formatCurrency(this)
+        })
+    }
+}
 
-/*
+function formatNumber(n) {
+    // format number 1000000 to 1,234,567
+    return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
-    // 102.814 - 4600
+function formatCurrency(input, blur) {
+    // appends $ to value, validates decimal side
+    // and puts cursor back in right position.
 
-    // price without shipping -> 98214 + (fees with shipping - fees without shipping)
-    // 16450 - 15714
+    // get input value
+    var input_val = input.value;
 
-    // = 98950 - fee with shipping
-    // / 3 = BOOOM! (units)
-    let priceWithoutShipping = Number(salePrice.textContent) - shippingFee;
-    let feesWithShipping = Math.round( commissionFee * Number(salePrice.textContent) / 100)
-    let feesWithoutShipping = Math.round( commissionFee * ( Number(salePrice.textContent) - shippingFee ) / 100)
-    // let o = priceWithoutShipping + (feesWithShipping - feesWithoutShipping) - feesWithShipping;
-    let o = priceWithoutShipping - feesWithoutShipping; // LOL hahhahahahah
-    console.log(feesWithShipping - feesWithoutShipping)
-    console.log (unitSellingPrice)
-    console.log(o) // units = price + profit! BOOM!
+    // don't validate empty input
+    if (input_val === "") {
+        return;
+    }
 
-    // 98214 - 15714
+    // original length
+    var original_len = input_val.length;
 
-    // AND
+    console.log(original_len)
+    // initial caret position
+    // var caret_pos = input.prop("selectionStart");
+    // var caret_pos = input.setSelectionRange(0, 0)
+    // var caret_pos = input.setSelectionRange(original_len, 0)
+    var caret_pos = input.selectionStart
 
-    // 102814 - 16450
+    // check for decimal
+    if (input_val.indexOf(".") >= 0) {
+        // get position of first decimal
+        // this prevents multiple decimals from
+        // being entered
+        var decimal_pos = input_val.indexOf(".");
 
-    // the commission is applied on the fucking price... so the shipping has nothing to do with any of this?
-    // I mean... does it have anything to do with the final price? shouldn't it be calculated after the fee has been applied?
+        // split number by decimal point
+        var left_side = input_val.substring(0, decimal_pos);
+        var right_side = input_val.substring(decimal_pos);
 
-    // PRICE WITH SHIPPING - FEES OF PRICE WITHOUT SHIPPING
-    // 102814 - 15714 - SHIPPING
-    // 87100 - 4600 = 82500
+        // add commas to left side of number
+        left_side = formatNumber(left_side);
 
-*/
+        // validate right side
+        right_side = formatNumber(right_side);
 
-/*
+        // On blur make sure 2 numbers after decimal
+        if (blur === "blur") {
+            right_side += "00";
+        }
 
-FORMULAS_
+        // Limit decimal to only 2 digits
+        right_side = right_side.substring(0, 2);
 
-// salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee;
-// salePrice.textContent = unitSellingPrice * numberOfUnits + shippingFee + 876; // If I add 876 it works... WHY?!!!
+        // join number by .
+        input_val = "$" + left_side + "." + right_side;
+    } else {
+        // no decimal entered
+        // add commas to number
+        // remove all non-digits
+        input_val = formatNumber(input_val);
+        input_val = "$" + input_val;
 
-*/
+        // final formatting
+        if (blur === "blur") {
+            input_val += ".00";
+        }
+    }
 
-/*
+    // send updated string to input
+    // input.val(input_val);
+    input.value = input_val
 
-    // let adjustedPrice = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
-    let adjustement = ( Number(salePrice.textContent) - Number(commissionValue.textContent) - shippingFee ) / numberOfUnits;
-    console.log(adjustement)
-    // let lack = ( numberOfUnits * ( price + profit ) ) - adjustement;
-    let lack = price + profit - adjustement;
-    console.log(lack)
-    let adjustedPrice = Number(salePrice.textContent) + lack * numberOfUnits;
-    console.log(adjustedPrice)
-
-*/
-
-/*
-
-// salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp );
-
-*/
+    // put caret back in the right position
+    var updated_len = input_val.length;
+    caret_pos = updated_len - original_len + caret_pos;
+    // input[0].setSelectionRange(caret_pos, caret_pos);
+    input.setSelectionRange(caret_pos, caret_pos);
+}
