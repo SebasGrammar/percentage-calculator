@@ -8,7 +8,8 @@ const salePrice = calculator.querySelector(".sale-price"), // Selling price -> a
     profits = calculator.querySelector(".profit"), // profit after selling specified units
     unitPrice = calculator.querySelector(".unit-price"),
     commissionValue = calculator.querySelector(".commission-value"),
-    unitWithoutCommission = calculator.querySelector(".unit-without-commission"); // unit price after applying commission
+    unitWithoutCommission = calculator.querySelector(".unit-without-commission"),
+    total = calculator.querySelector(".total"); // unit price after applying commission
 
 // DATA
 
@@ -47,20 +48,22 @@ function calculate() {
     // Price without commission
     let priceWithoutCommission = price + profit;
 
+    // // Total after all fees have been applied
+    total.textContent = priceWithoutCommission * numberOfUnits;
+
+    console.log(priceWithoutCommission * numberOfUnits)
+
     // Extra fee (only applicable to some items)
     let extraFee = Number(additionalFee.value)
-    console.log(extraFee)
 
-    /* TEST */
-
-    let x = numberOfUnits * (1 - commissionFee / 100)
+    let x = numberOfUnits * (1 - commissionFee / 100) // had to use a linear equation to figure out the actual fee.
     let y = numberOfUnits * shippingFee
 
     let shipp = y / x
 
     /******************/
 
-    let z = numberOfUnits * extraFee
+    let z = numberOfUnits * extraFee // same here
     let ext = z / x
     console.log(ext)
 

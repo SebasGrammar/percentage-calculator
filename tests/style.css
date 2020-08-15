@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
     font-family: 'Lato', sans-serif;
 }
 
@@ -29,7 +27,6 @@ body {
     justify-content: center;
     align-content: center;
 }
-
 
 /*****APP*****/
 
@@ -63,57 +60,55 @@ body {
     font-size: 50%;
 }
 
-.sale-price {
+.sale-price {}
+
+.highlight {
+    padding: 2px 10px;
+
+    background: #303F9F;
+    color: #FFF;
+
+    border-radius: 5px;
+}
+
+.total {
 
 }
 
 .info {
     /* display: flex;
     justify-content: space-between; */
-
-
     /* padding: 0 80px; */
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-
-    
 }
 
 .group {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* I was using justify-self instead of justify-content ... */
+    justify-content: flex-start;
+    /* I was using justify-self instead of justify-content ... */
     align-items: center;
-
     text-align: center;
     font-size: 0.8rem;
 }
 
-
 /******************/
 
 .parameters {
-    
     background: #303F9F;
-
     color: #FFF;
 }
 
-.buying-price {
-
-}
+.buying-price {}
 
 .row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
-    
-    
 }
 
 .data {
     display: flex;
     flex-direction: column;
-
     padding: 0 10px;
 }
