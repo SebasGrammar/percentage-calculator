@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* NOT RESPONSIVE YET */
+
 * {
     padding: 0;
     margin: 0;
@@ -31,14 +34,32 @@ body {
 /*****APP*****/
 
 .calculator {
-    width: 450px;
-    height: 450px;
+
+    /* TEST */
+
+    display: grid;
+    grid-template-rows: 1fr 1fr auto;
+    
+
+    /********/
+
+    width: 370px;
+    height: 600px;
+    padding: 15px 0 0 0;
+
     background: #e1f0fa;
+
+    border-radius: 5px;
+
 }
 
 /***************/
 
-.info-display {}
+.info-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 /* .sale-price {
     display: flex;
@@ -93,9 +114,18 @@ body {
     font-size: 0.8rem;
 }
 
+.group > h3 {
+    flex: 1;
+}
+
 /******************/
 
 .parameters {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     background: #303F9F;
     color: #FFF;
 }
