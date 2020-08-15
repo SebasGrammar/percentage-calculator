@@ -66,3 +66,9 @@ FORMULAS_
     console.log(adjustedPrice)
 
 */
+
+/*
+
+// salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp );
+
+*/

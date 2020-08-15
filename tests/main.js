@@ -16,7 +16,8 @@ const buyingPrice = calculator.querySelector(".buying-price"),
     shipping = calculator.querySelector(".shipping"),
     desiredProfit = calculator.querySelector(".desired-profit"),
     units = calculator.querySelector(".units"),
-    commission = calculator.querySelector(".commission");
+    commission = calculator.querySelector(".commission"),
+    additionalFee = calculator.querySelector(".extra-fee");
 
 // TRIGGER
 
@@ -46,6 +47,10 @@ function calculate() {
     // Price without commission
     let priceWithoutCommission = price + profit;
 
+    // Extra fee (only applicable to some items)
+    let extraFee = Number(additionalFee.value)
+    console.log(extraFee)
+
     /* TEST */
 
     let x = numberOfUnits * (1 - commissionFee / 100)
@@ -53,56 +58,13 @@ function calculate() {
 
     let shipp = y / x
 
-    /* TEST ABOVE */
+    /******************/
 
-    /* TEST */
-
-    let z = numberOfUnits * 500
+    let z = numberOfUnits * extraFee
     let ext = z / x
     console.log(ext)
-    /* TEST ABOVE */
 
-    //let w = numberOfUnits * ()
-
-    // CONTENT
-    // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shippingFee + (19.05 * shippingFee / 100) );
-    // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
-    
-    //let w = Math.round( unitSellingPrice * numberOfUnits + shipp);
-    let w = Math.round( unitSellingPrice * numberOfUnits + shipp + (numberOfUnits * 500));
-
-    
-    if (w < 70000) {
-    //  salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
-        // console.log("SMALler")
-        // w += 500
-        // commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100) + 500;
-
-        salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp + ext);
-
-        // THERE IS A DIFFERENCE OF 500!!!!
-    } else {
-        salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
-    }
-    // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp);
-    //salePrice.textContent = w;
-
-    /* TEST */
-
-    let amount1 = unitSellingPrice * numberOfUnits
-
-    console.log(amount1)
-
-    let amount2 = unitSellingPrice * numberOfUnits + shippingFee
-
-    console.log(amount2)
-
-
-    /* TEST ABOVE */
-
-
-    // THE ONE ABOVE IS THE ORIGINAL. THE ONE BELOW IS A TEST
-    // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp );
+    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp + ext);
     profits.textContent = profit * numberOfUnits;
     unitPrice.textContent = Math.round(unitSellingPrice);
     commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
