@@ -53,7 +53,8 @@ function calculate() {
 
     // Commission
     // let commissionFee = Number(commission.value);
-    let commissionFee = removeFormat(commission.value);
+    // let commissionFee = removeFormat(commission.value);
+    let commissionFee = commission.value; // there is no need to format this.
 
     // Shipping
     // let shippingFee = Number(shipping.value);
