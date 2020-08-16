@@ -12,16 +12,21 @@ let currencyFields = document.querySelectorAll("input[data-type='currency']")
 export function initialize() {
     for (let field of currencyFields) {
         field.addEventListener("keyup", function () {
-            console.log(this)
-            console.log(this.value)
+            //console.log(this)
+            //console.log(this.value)
             formatCurrency(this)
         })
     }
 }
 
-function formatNumber(n) {
+export function formatNumber(n) {
     // format number 1000000 to 1,234,567
     return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+export function removeFormat(n) {
+    //console.log(n.replace(/\W/, "lol"))
+    return Number( n.replace(/\D/g, "") )
 }
 
 function formatCurrency(input, blur) {
@@ -29,7 +34,11 @@ function formatCurrency(input, blur) {
     // and puts cursor back in right position.
 
     // get input value
-    var input_val = input.value;
+    let unformattedValue = removeFormat(input.value);
+    console.log("l")
+    console.log(unformattedValue)
+    // var input_val = input.value
+    var input_val = input.value || input.textContent;
 
     // don't validate empty input
     if (input_val === "") {
@@ -39,7 +48,7 @@ function formatCurrency(input, blur) {
     // original length
     var original_len = input_val.length;
 
-    console.log(original_len)
+    //console.log(original_len)
     // initial caret position
     // var caret_pos = input.prop("selectionStart");
     // var caret_pos = input.setSelectionRange(0, 0)

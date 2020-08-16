@@ -1,4 +1,4 @@
-import {initialize} from "./src/js/formatter.js";
+import { initialize, formatNumber, removeFormat } from "./src/js/formatter.js";
 
 // CALCULATOR
 
@@ -29,21 +29,26 @@ initialize()
 const calculateButton = calculator.querySelector(".calculate-button");
 
 function calculate() {
-    
+
     // Buying price -> how much does each unit cost?
-    let price = Number(buyingPrice.value);
+    // let price = Number(buyingPrice.value);
+    let price = removeFormat(buyingPrice.value);
 
     // Desired profit
-    let profit = Number(desiredProfit.value);
+    // let profit = Number(desiredProfit.value);
+    let profit = removeFormat(desiredProfit.value);
 
     // Units
-    let numberOfUnits = Number(units.value);
+    // let numberOfUnits = Number(units.value);
+    let numberOfUnits = removeFormat(units.value)
 
     // Commission
-    let commissionFee = Number(commission.value);
+    // let commissionFee = Number(commission.value);
+    let commissionFee = removeFormat(commission.value);
 
     // Shipping
-    let shippingFee = Number(shipping.value);
+    // let shippingFee = Number(shipping.value);
+    let shippingFee = removeFormat(shipping.value)
 
     // Price after applying selling fees (commission)
     // let unitSellingPrice = Math.round((price + profit) / (1 - commissionFee / 100))
@@ -53,7 +58,7 @@ function calculate() {
     let priceWithoutCommission = price + profit;
 
     // // Total after all fees have been applied
-    total.textContent = priceWithoutCommission * numberOfUnits;
+    total.textContent = formatNumber( (priceWithoutCommission * numberOfUnits).toString() );
 
     console.log(priceWithoutCommission * numberOfUnits)
 
@@ -71,18 +76,30 @@ function calculate() {
     let ext = z / x
     console.log(ext)
 
-    salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp + ext);
-    profits.textContent = profit * numberOfUnits;
-    unitPrice.textContent = Math.round(unitSellingPrice);
-    commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
-    unitWithoutCommission.textContent = priceWithoutCommission
-    
+    /* ORIGINAL */
 
+    // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp + ext);
+    // profits.textContent = profit * numberOfUnits;
+    // unitPrice.textContent = Math.round(unitSellingPrice);
+    // commissionValue.textContent = Math.round( commissionFee * Number(salePrice.textContent) / 100);
+    // unitWithoutCommission.textContent = priceWithoutCommission
+
+    /*************/
+
+    /* TEST */
+
+    salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext).toString() );
+    profits.textContent = formatNumber( (profit * numberOfUnits).toString() );
+    unitPrice.textContent = formatNumber( Math.round(unitSellingPrice).toString() );
+    commissionValue.textContent = formatNumber( Math.round( commissionFee * removeFormat(salePrice.textContent) / 100).toString() );
+    unitWithoutCommission.textContent = formatNumber( priceWithoutCommission.toString() )
+
+    /*************/
 
 }
 
 // calculateButton.addEventListener("click", calculate)
-calculateButton.addEventListener("click", function(event) {
+calculateButton.addEventListener("click", function (event) {
     event.preventDefault()
     // event.stopPropagation()
     calculate()
