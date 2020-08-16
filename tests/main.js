@@ -1,4 +1,5 @@
 import { initialize, formatNumber, removeFormat } from "./src/js/formatter.js";
+import { copy } from "./src/js/copy.js";
 
 // CALCULATOR
 
@@ -24,6 +25,14 @@ const buyingPrice = calculator.querySelector(".buying-price"),
 
 // TRIGGER
 
+function set() {
+    let currencyFields = document.querySelectorAll("input[data-type='currency']");
+    currencyFields.forEach(field => {
+        field.value = `$${formatNumber(field.value)}`
+    })
+}
+
+set()
 initialize()
 
 const calculateButton = calculator.querySelector(".calculate-button");
@@ -63,7 +72,8 @@ function calculate() {
     console.log(priceWithoutCommission * numberOfUnits)
 
     // Extra fee (only applicable to some items)
-    let extraFee = Number(additionalFee.value)
+    // let extraFee = Number(additionalFee.value)
+    let extraFee = removeFormat(additionalFee.value)
 
     let x = numberOfUnits * (1 - commissionFee / 100) // had to use a linear equation to figure out the actual fee.
     let y = numberOfUnits * shippingFee
@@ -98,9 +108,9 @@ function calculate() {
 
 }
 
-// calculateButton.addEventListener("click", calculate)
-calculateButton.addEventListener("click", function (event) {
-    event.preventDefault()
-    // event.stopPropagation()
-    calculate()
-})
+calculateButton.addEventListener("click", calculate)
+// calculateButton.addEventListener("click", function (event) {
+//     event.preventDefault()
+//     // event.stopPropagation()
+//     calculate()
+// })
