@@ -21,7 +21,8 @@ const buyingPrice = calculator.querySelector(".buying-price"),
     desiredProfit = calculator.querySelector(".desired-profit"),
     units = calculator.querySelector(".units"),
     commission = calculator.querySelector(".commission"),
-    additionalFee = calculator.querySelector(".extra-fee");
+    additionalFee = calculator.querySelector(".extra-fee"),
+    vat = calculator.querySelector(".vat");
 
 // TRIGGER
 
@@ -54,7 +55,10 @@ function calculate() {
     // Commission
     // let commissionFee = Number(commission.value);
     // let commissionFee = removeFormat(commission.value);
-    let commissionFee = commission.value; // there is no need to format this.
+    let commissionFee = Number(commission.value); // there is no need to format this.
+
+    // VAT / IVA
+    let vatFee = Number(vat.value);
 
     // Shipping
     // let shippingFee = Number(shipping.value);
@@ -87,6 +91,20 @@ function calculate() {
     let ext = z / x
     console.log(ext)
 
+    /*****************/
+
+    // let h = numberOfUnits * vatFee
+    // let iva = h / x
+    // console.log(iva)
+
+    // let h = numberOfUnits * (1 - vatFee / 100)
+    // let j = numberOfUnits * 
+    // let iva = h / x
+    // console.log(iva)
+
+    let h = numberOfUnits * vatFee
+    let iva = h / x
+
     /* ORIGINAL */
 
     // salePrice.textContent = Math.round( unitSellingPrice * numberOfUnits + shipp + ext);
@@ -99,7 +117,8 @@ function calculate() {
 
     /* TEST */
 
-    salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext).toString() );
+    // salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext).toString() );
+    salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext + iva).toString() );
     profits.textContent = formatNumber( (profit * numberOfUnits).toString() );
     unitPrice.textContent = formatNumber( Math.round(unitSellingPrice).toString() );
     commissionValue.textContent = formatNumber( Math.round( commissionFee * removeFormat(salePrice.textContent) / 100).toString() );
