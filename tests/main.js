@@ -81,6 +81,7 @@ function calculate() {
     let extraFee = removeFormat(additionalFee.value)
 
     let x = numberOfUnits * (1 - commissionFee / 100) // had to use a linear equation to figure out the actual fee.
+    console.log(`X: ${x}`)
     let y = numberOfUnits * shippingFee
 
     let shipp = y / x
@@ -102,8 +103,14 @@ function calculate() {
     // let iva = h / x
     // console.log(iva)
 
-    let h = numberOfUnits * vatFee
+    // let h = numberOfUnits * (1 - vatFee / 100)
+    let j = numberOfUnits * (1 - vatFee / 100)
+    console.log(`J: ${j}`)
+    let h = numberOfUnits * vatFee;
+    console.log("H")
+    console.log(h)
     let iva = h / x
+    console.log(iva)
 
     /* ORIGINAL */
 
