@@ -22,7 +22,8 @@ const buyingPrice = calculator.querySelector(".buying-price"),
     units = calculator.querySelector(".units"),
     commission = calculator.querySelector(".commission"),
     additionalFee = calculator.querySelector(".extra-fee"),
-    vat = calculator.querySelector(".vat");
+    vat = calculator.querySelector(".vat"),
+    ica = calculator.querySelector(".ica");
 
 // TRIGGER
 
@@ -59,6 +60,10 @@ function calculate() {
 
     // VAT / IVA
     let vatFee = Number(vat.value);
+
+    // ICA
+
+    let icaFee = Number(ica.value);
 
     // Shipping
     // let shippingFee = Number(shipping.value);
@@ -140,7 +145,6 @@ function calculate() {
     profits.textContent = formatNumber( (profit * numberOfUnits).toString() );
     unitPrice.textContent = formatNumber( Math.round(unitSellingPrice).toString() );
     commissionValue.textContent = formatNumber( Math.round( commissionFee * removeFormat(salePrice.textContent) / 100).toString() );
-    console.log(`commission value: ${commissionValue.textContent}`)
     unitWithoutCommission.textContent = formatNumber( priceWithoutCommission.toString() )
 
     /*************/
@@ -163,6 +167,18 @@ function calculate() {
     // x - (unitSellingPrice * numberOfUnits) - (commissionFee / 100)x  - (vativa / 100)x - (ICA / 100)x = 0;
     // x =  1 - (commissionFee / 100)  - (vativa / 100) - (ICA / 100)
     // unitSelling * numberOfUnits / x 
+
+    let t1 = removeFormat(total.textContent) / (vatFee / 100)
+    console.log(`t1: ${t1}`)
+
+    let t2 = icaFee / 100 * removeFormat(total.textContent)
+    console.log(`t2: ${t2}`)
+
+    let unknown = 1 - (commissionFee / 100) - (vatFee / 100) - (icaFee / 100)
+    console.log( removeFormat(total.textContent) / unknown )
+
+    console.log(removeFormat(total.textContent) / unknown * vatFee / 100)
+    console.log(removeFormat(total.textContent) / unknown * icaFee / 100)
 }
 
 calculateButton.addEventListener("click", calculate)
