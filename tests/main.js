@@ -41,6 +41,8 @@ const calculateButton = calculator.querySelector(".calculate-button");
 
 function calculate() {
 
+    let deleteLater = console.log;
+    console.log = function() {}
     // Buying price -> how much does each unit cost?
     // let price = Number(buyingPrice.value);
     let price = removeFormat(buyingPrice.value);
@@ -85,7 +87,8 @@ function calculate() {
     // let extraFee = Number(additionalFee.value)
     let extraFee = removeFormat(additionalFee.value)
 
-    let x = numberOfUnits * (1 - commissionFee / 100) // had to use a linear equation to figure out the actual fee.
+    // let x = numberOfUnits * (1 - commissionFee / 100) // had to use a linear equation to figure out the actual fee.
+    let x = 1 - (commissionFee / 100) - (vatFee / 100) - (icaFee / 100)
     console.log(`X: ${x}`)
     let y = numberOfUnits * shippingFee
     console.log(`Y: ${y}`)
@@ -168,15 +171,39 @@ function calculate() {
     // x =  1 - (commissionFee / 100)  - (vativa / 100) - (ICA / 100)
     // unitSelling * numberOfUnits / x 
 
-    let t1 = removeFormat(total.textContent) / (vatFee / 100)
-    console.log(`t1: ${t1}`)
+    // let t1 = removeFormat(total.textContent) / (vatFee / 100)
+    // console.log(`t1: ${t1}`)
 
-    let t2 = icaFee / 100 * removeFormat(total.textContent)
-    console.log(`t2: ${t2}`)
+    // let t2 = icaFee / 100 * removeFormat(total.textContent)
+    // console.log(`t2: ${t2}`)
+
+    /*
+
+    salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext).toString() );
+    profits.textContent = formatNumber( (profit * numberOfUnits).toString() );
+    unitPrice.textContent = formatNumber( Math.round(unitSellingPrice).toString() );
+    commissionValue.textContent = formatNumber( Math.round( commissionFee * removeFormat(salePrice.textContent) / 100).toString() );
+    unitWithoutCommission.textContent = formatNumber( priceWithoutCommission.toString() )
+
+    */
+   
+    console.log = deleteLater;
 
     let unknown = 1 - (commissionFee / 100) - (vatFee / 100) - (icaFee / 100)
-    console.log( removeFormat(total.textContent) / unknown )
 
+    //console.log(removeFormat(total.textContent) / unknown)
+
+    let alternativePrice = Math.round(removeFormat(total.textContent) / unknown)
+    console.log(`alternative price: ${alternativePrice}`)
+
+    console.log(`works? ${( 81590 + 4600 ) / unknown}`) // ayyy... this works! 105000... hmmm
+
+    console.log(`should be: ${105000 * (vatFee / 100)}`) // hmm. this one works...
+    
+    //console.log(`is right? ${removeFormat(total.textContent) + shipp}`)
+    //console.log( (removeFormat(total.textContent) + 8300) / unknown )
+
+    console.log(`commission: ${Math.round( commissionFee * alternativePrice / 100 )}`)
     console.log(removeFormat(total.textContent) / unknown * vatFee / 100)
     console.log(removeFormat(total.textContent) / unknown * icaFee / 100)
 }

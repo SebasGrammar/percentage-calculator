@@ -35,8 +35,7 @@ function formatCurrency(input, blur) {
 
     // get input value
     let unformattedValue = removeFormat(input.value);
-    console.log("l")
-    console.log(unformattedValue)
+
     // var input_val = input.value
     var input_val = input.value || input.textContent;
 
