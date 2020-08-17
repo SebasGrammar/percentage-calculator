@@ -247,7 +247,15 @@ function calculate() {
     // console.log(`Sale price: ${formatNumber( Math.round( (unitSellingPrice * numberOfUnits) + ( shippingFee / unknown) ).toString() )}`) // + ext... that's missing here.
     console.log(`Sale price: ${testPrice}`)
     console.log(testPrice)
-    console.log(testPrice * (vatFee / 100))
+    console.log(`Withholding tax: ${Math.ceil( testPrice * (vatFee / 100) )}`)
+    console.log(`ICA: ${Math.ceil( testPrice * (icaFee / 100) )}`)
+
+    let com = Math.round( commissionFee * testPrice / 100);
+    console.log(`New commission: ${com}`)
+
+    /* TEST */
+
+    
 }
 
 calculateButton.addEventListener("click", calculate)
