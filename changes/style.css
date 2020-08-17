@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* NOT RESPONSIVE YET */
+
+:root {
+    --round-border: 7px;
+    --lateral-margin: 3%;
+
+    --background: #303F9F;
+    --parameters: #FFF;
+    --button: #6ABF0A;
+
+    --currency: #303F9F;
+    --parameters-color: #303F9F;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* .group {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+
+    font-size: 0.8rem;
+} */
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+/*****APP*****/
+
+.calculator {
+
+    /* TEST */
+
+    display: grid;
+    grid-template-rows: 1fr 1fr auto;
+    
+
+    /********/
+
+    /* width: 370px; */
+    width: 370px;
+    height: 550px;
+    /* padding: 15px 0 0 0; */
+    padding: 15px 0;
+    /* padding: 15px 20px; */
+
+    /* background: #e1f0fa; */
+    /* background: #303F9F; */
+    background: var(--background);
+    color: #FFF;
+
+    /* border: 2px solid rgba(128, 128, 128, 0.11); */
+    border-radius: var(--round-border);
+
+}
+
+/***************/
+
+.info-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+/* .sale-price {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    font-size: 2.5rem;
+} */
+
+.price {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 2.8rem;
+}
+
+.currency-sign {
+    padding: 10px;
+    font-size: 50%;
+}
+
+.sale-price {}
+
+.highlight {
+    padding: 2px 10px;
+
+    background: #FFF;
+    /* color: #303F9F; */
+    color: var(--currency);
+
+    border-radius: 5px;
+}
+
+.total {
+
+}
+
+.info {
+    /* display: flex;
+    justify-content: space-between; */
+    /* padding: 0 80px; */
+
+    /* display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); */
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* I was using justify-self instead of justify-content ... */
+    align-items: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.group > h3 {
+    flex: 1;
+
+    font-size: 0.8rem;
+}
+
+.container > .group > h3 {
+
+    /* color: rgb(230, 227, 227); */
+    margin-bottom: 5px;
+
+}
+
+.container > .group > p {
+
+
+    padding: 2px 10px;
+    /* margin-top: 5px; */
+    margin-bottom: 5px;
+
+    background: #FFF;
+    color: var(--currency);
+
+    border-radius: 5px;
+
+    font-size: 1.3rem;
+
+
+
+}
+
+.container > .group:last-of-type p {
+    margin-bottom: 0;
+  }
+
+.left {
+    text-align: right !important;
+    background: red;
+}
+
+/******************/
+
+.parameters {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    
+    /* margin: var(--lateral-margin); */
+    /* margin: 0 var(--lateral-margin); */
+    margin: 0 var(--lateral-margin);
+
+
+    /* background: #303F9F; */
+    /* background: #FFF; */
+    background: var(--parameters);
+    /* color: #FFF; */
+    /* color: #303F9F; */
+    color: var(--currency);
+
+    /* border-radius: 5px; */
+    border-radius: var(--round-border) var(--round-border) 0 0;
+
+}
+
+.buying-price {}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.data > label {
+    font-size: 0.8rem;
+}
+
+.data > input {
+    width: 80%;
+
+    outline: none;
+    border: none;
+
+    font-size: 1.3rem;
+}
+
+/* .calculate-button {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+
+    
+    background: #303F9F;
+    color: #FFF;
+
+    border: none;
+
+    z-index: 5;
+} */
+
+/** CALCULATE **/
+
+.calculate-button {
+    width: 100%;
+    padding: 16px;
+    /* margin-top: 5px; */
+    margin: 0 var(--lateral-margin);
+    
+    /* background: #6ABF0A; */
+    background: var(--button);
+    color: #FFF;
+
+    border: none;
+    /* border-radius: var(--round-border); */
+    border-radius: 0 0 var(--round-border) var(--round-border);
+
+    font-size: 1rem;
+    font-weight: 800;
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div class="calculator">
+        <div class="info-display">
+            <div class="group">
+                <p class="price"><span class="currency-sign">$</span><span class="sale-price">35.000</span></p>
+                <p class="highlight">$ <span class="total">0</span></p>
+            </div>
+
+            <div class="info">
+
+                <div class="container">
+                    <div class="group">
+                        <h3>Profit</h3>
+                        <p>$ <span class="profit">0</span></p>
+                    </div>
+
+                    <div class="group">
+                        <h3>Unit price</h3>
+                        <p>$ <span class="unit-price">0</span></p>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="group">
+                        <h3>Commission value</h3>
+                        <p>$ <span class="commission-value">0</span></p>
+                    </div>
+
+                    <div class="group">
+                        <h3>Unit without commission</h3>
+                        <p>$ <span class="unit-without-commission">0</span></p>
+                    </div>
+                </div>
+
+                <!-- <div class="group">
+                    <h3>Total</h3>
+                    <p>$ <span class="total"></span></p>
+                </div> -->
+            </div>
+        </div>
+
+        <form action="" class="parameters">
+            <div class="row">
+
+                <div class="data">
+                    <label for="buying-price">Buying price</label>
+                    <!-- <input type="text" name="buying-price" class="buying-price" data-type="currency" value="21500"> -->
+                    <input type="text" name="buying-price" class="buying-price" data-type="currency" value="36500">
+                </div>
+
+                <div class="data">
+                    <label for="desired-profit">Desired profit per unit</label>
+                    <!-- <input type="text" name="desired-profit" class="desired-profit" data-type="currency" value="6000"> -->
+                    <input type="text" name="desired-profit" class="desired-profit" data-type="currency" value="11848">
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="data">
+                    <label for="shipping">Shipping</label>
+                    <!-- <input type="text" name="shipping" class="shipping" data-type="currency" value="4600"> -->
+                    <input type="text" name="shipping" class="shipping" data-type="currency" value="0">
+                </div>
+
+                <div class="data">
+                    <label for="units">Units</label>
+                    <!-- <input type="text" name="units" class="units" value="3"> -->
+                    <input type="text" name="units" class="units" value="1">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="data">
+                    <label for="commission">Commission</label>
+                    <input type="text" name="commission" class="commission" value="16">
+                </div>
+
+                <div class="data">
+                    <label for="extra-fee">Extra fee</label>
+                    <input type="text" name="extra-fee" class="extra-fee" data-type="currency" value="0">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="data">
+                    <label for="vat">IVA</label>
+                    <input type="text" name="vat" class="vat" value="1.5">
+                </div>
+
+                <div class="data">
+                    <label for="ica">ICA</label>
+                    <input type="text" name="ica" class="ica" value="0.414">
+                </div>
+
+            </div>
+
+            <!-- <div class="center">
+                <button class="calculate-button">Calculate</button>
+            </div> -->
+        </form>
+
+        <div class="center">
+            <button class="calculate-button">Calculate</button>
+        </div>
+
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
