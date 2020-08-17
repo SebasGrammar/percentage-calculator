@@ -187,7 +187,7 @@ function calculate() {
 
     */
    
-    console.log = deleteLater;
+    // console.log = deleteLater; (1)
 
     let unknown = 1 - (commissionFee / 100) - (vatFee / 100) - (icaFee / 100)
 
@@ -231,6 +231,23 @@ function calculate() {
     console.log("ML") // with no commission, this works!
     console.log( Math.ceil( (45941 + 8300) / unknown ) ) 
 
+    console.log = deleteLater;
+
+    //console.log(unitSellingPrice)
+    // console.log(`Sale price: ${formatNumber( Math.ceil( (unitSellingPrice * numberOfUnits) + shippingFee).toString() )}`)
+    // console.log(`Sale price: ${formatNumber( Math.ceil( testTotal + shippingFee / unknown).toString() )}`)
+    // IT WORKS!
+    // WON't use ceil here... just round.
+    console.log(shippingFee)
+    // watch out with these parentheses
+    // let testPrice = Math.round( (unitSellingPrice * numberOfUnits) + ( shippingFee / unknown) )
+    // let testPrice = Math.round( ( (unitSellingPrice * numberOfUnits + shippingFee ) / unknown) )
+
+    let testPrice = Math.round( ( (removeFormat(total.textContent) + shippingFee ) / unknown) )
+    // console.log(`Sale price: ${formatNumber( Math.round( (unitSellingPrice * numberOfUnits) + ( shippingFee / unknown) ).toString() )}`) // + ext... that's missing here.
+    console.log(`Sale price: ${testPrice}`)
+    console.log(testPrice)
+    console.log(testPrice * (vatFee / 100))
 }
 
 calculateButton.addEventListener("click", calculate)
