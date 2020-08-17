@@ -83,34 +83,36 @@ function calculate() {
     let x = numberOfUnits * (1 - commissionFee / 100) // had to use a linear equation to figure out the actual fee.
     console.log(`X: ${x}`)
     let y = numberOfUnits * shippingFee
+    console.log(`Y: ${y}`)
 
     let shipp = y / x
+
+
+    console.log(`shipping: ${shipp}`)
 
     /******************/
 
     let z = numberOfUnits * extraFee // same here
     let ext = z / x
-    console.log(ext)
+    console.log(`ext: ${ext}`)
 
-    /*****************/
+    /********TEST BELOW********/
 
-    // let h = numberOfUnits * vatFee
-    // let iva = h / x
-    // console.log(iva)
+//    let m = numberOfUnits * (1 - vatFee / 100) * (price + profit);
+//    console.log(`m: ${m}`)
+//    let n = m / x
+//    let nValue = n - (commissionFee * removeFormat(salePrice.textContent) / 100)
+//    console.log(`IVA: ${nValue}`)
 
-    // let h = numberOfUnits * (1 - vatFee / 100)
-    // let j = numberOfUnits * 
-    // let iva = h / x
-    // console.log(iva)
+//    let o = numberOfUnits * (1 - 0.414 / 100) * (price + profit);
+//    let p = o / x
+//    console.log(`real p: ${p}`)
+//    console.log(`there: ${commissionFee * removeFormat(salePrice.textContent) / 100}`)
+//    let pValue = (commissionFee * removeFormat(salePrice.textContent) / 100) - p
+//    console.log(`p: ${pValue}`)
 
-    // let h = numberOfUnits * (1 - vatFee / 100)
-    let j = numberOfUnits * (1 - vatFee / 100)
-    console.log(`J: ${j}`)
-    let h = numberOfUnits * vatFee;
-    console.log("H")
-    console.log(h)
-    let iva = h / x
-    console.log(iva)
+
+    /* ACTUAL CODE BELOW -> TEST ABOVE */
 
     /* ORIGINAL */
 
@@ -125,14 +127,42 @@ function calculate() {
     /* TEST */
 
     // salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext).toString() );
-    salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext + iva).toString() );
+    // profits.textContent = formatNumber( (profit * numberOfUnits).toString() );
+    // unitPrice.textContent = formatNumber( Math.round(unitSellingPrice).toString() );
+    // commissionValue.textContent = formatNumber( Math.round( commissionFee * removeFormat(salePrice.textContent) / 100).toString() );
+    // unitWithoutCommission.textContent = formatNumber( priceWithoutCommission.toString() )
+
+
+    /*** ORIGINAL ABOVE - ** */
+
+    // salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext).toString() );
+    salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext).toString() );
     profits.textContent = formatNumber( (profit * numberOfUnits).toString() );
     unitPrice.textContent = formatNumber( Math.round(unitSellingPrice).toString() );
     commissionValue.textContent = formatNumber( Math.round( commissionFee * removeFormat(salePrice.textContent) / 100).toString() );
+    console.log(`commission value: ${commissionValue.textContent}`)
     unitWithoutCommission.textContent = formatNumber( priceWithoutCommission.toString() )
 
     /*************/
 
+    let m = numberOfUnits * (1 - vatFee / 100) * (price + profit);
+    console.log(`m: ${m}`)
+    let n = m / x
+    let nValue = removeFormat(salePrice.textContent) - n
+    console.log(`IVA: ${nValue}`)
+ 
+    let o = numberOfUnits * (1 - 0.414 / 100) * (price + profit);
+    let p = o / x
+    let pValue = removeFormat(salePrice.textContent) - p
+    console.log(`real p: ${p}`)
+    console.log(removeFormat(salePrice.textContent) - p)
+    
+    // salePrice.textContent = formatNumber( Math.round( unitSellingPrice * numberOfUnits + shipp + ext + pValue + nValue).toString() );
+
+    // found THE FORMULA :D
+    // x - (unitSellingPrice * numberOfUnits) - (commissionFee / 100)x  - (vativa / 100)x - (ICA / 100)x = 0;
+    // x =  1 - (commissionFee / 100)  - (vativa / 100) - (ICA / 100)
+    // unitSelling * numberOfUnits / x 
 }
 
 calculateButton.addEventListener("click", calculate)
