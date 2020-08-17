@@ -244,7 +244,7 @@ function calculate() {
     // let testPrice = Math.round( ( (unitSellingPrice * numberOfUnits + shippingFee ) / unknown) )
 
     // let testPrice = Math.round( ( (removeFormat(total.textContent) + shippingFee + extraFee ) / unknown) )
-    let testPrice = Math.round( ( (removeFormat(total.textContent) + (shippingFee * numberOfUnits) + (extraFee * numberOfUnits) ) / unknown) )
+    let testPrice = Math.round( ( (removeFormat(total.textContent) + (shippingFee) + (extraFee) ) / unknown) )
     // console.log(`Sale price: ${formatNumber( Math.round( (unitSellingPrice * numberOfUnits) + ( shippingFee / unknown) ).toString() )}`) // + ext... that's missing here.
     console.log(`Sale price: ${testPrice}`)
     console.log(testPrice)
