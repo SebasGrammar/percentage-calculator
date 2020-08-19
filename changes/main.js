@@ -210,6 +210,19 @@ function calculate() {
     commissionValue.textContent = formatNumber( Math.round( commissionFee * removeFormat(salePrice.textContent) / 100).toString() );
     unitWithoutCommission.textContent = formatNumber( priceWithoutCommission.toString() )
     
+
+    let newUnknown = 1 - (commissionFee / 100)
+    // let ghosts = Math.round( ( ( (removeFormat(total.textContent) + (extraFee) ) / unknown) + shippingFee) )
+    let ghosts = Math.round( ( ( (removeFormat(total.textContent) + (extraFee) ) / newUnknown) + shippingFee) )
+    console.log(`ghosts: ${ghosts}`)
+    //let ghostVAT = removeFormat(salePrice.textContent) + 9100 // for this to work, don't include shipping.
+    let ghostVAT = Math.ceil(ghosts * (vatFee / 100)) // applies after shipping has been added... not before, which is weird.
+    let ghostICA = Math.ceil(ghosts * (icaFee / 100))
+    console.log("------")
+    console.log(ghostVAT)
+    //console.log(`ghost IVA VAT: ${Math.ceil( ghostVAT * (1.5 / 100) )}`)
+    console.log(`ghost VAT: ${ghostVAT}`)
+    console.log(`ghost ICA: ${ghostICA}`)
 }
 
 calculateButton.addEventListener("click", calculate)
